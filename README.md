@@ -88,7 +88,7 @@ licencias MIT originales dentro de `lib/vendor/`.
 ## Publicado
 
 - Repositorio: https://github.com/JAGY2010/qr3d-generador
-- Web en vivo (dominio temporal de Railway): https://qr3d-production.up.railway.app
+- Web en vivo (dominio temporal de Railway): https://lexasylum.com
 
 El servicio de Railway esta conectado a este repositorio: **cada push a `main`
 se publica solo**, sin tocar nada mas.

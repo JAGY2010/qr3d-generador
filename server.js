@@ -9,6 +9,10 @@ const zlib = require("zlib");
 const ROOT = __dirname;
 const PORT = process.env.PORT || 3000;
 
+/* Dominio oficial. La direccion temporal de Railway redirige aqui para que
+   Google no indexe la misma web dos veces. */
+const CANONICAL_HOST = process.env.CANONICAL_HOST || "lexasylum.com";
+
 const TYPES = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -37,6 +41,15 @@ function send(res, code, body, headers) {
 }
 
 const server = http.createServer((req, res) => {
+  const host = String(req.headers.host || "").toLowerCase().split(":")[0];
+  if (host.endsWith(".up.railway.app") && CANONICAL_HOST) {
+    res.writeHead(301, {
+      Location: "https://" + CANONICAL_HOST + req.url,
+      "Cache-Control": "public, max-age=3600"
+    });
+    return res.end();
+  }
+
   let urlPath;
   try {
     urlPath = decodeURIComponent(new URL(req.url, "http://x").pathname);
