@@ -298,8 +298,8 @@
 
     if (mod < minM) {
       out.push(note("bad", "<b>Cuadritos demasiado pequenos</b> (" + fmt(mod, 2) + " mm). Por debajo de 1,5 mm la boquilla los emborrona: agranda la pieza o acorta el enlace."));
-    } else if (mod < minM + 0.3) {
-      out.push(note("warn", "Cuadritos justos (" + fmt(mod, 2) + " mm). Funciona, pero con 0,2 mm de capa y una boquilla de 0,4 mm ve al limite."));
+    } else if (mod < minM + 0.15) {
+      out.push(note("warn", "Cuadritos justos (" + fmt(mod, 2) + " mm), apenas por encima del minimo. Funciona, pero imprime una unidad de prueba antes de una tirada."));
     } else {
       out.push(note("ok", "Cada cuadrito mide " + fmt(mod, 2) + " mm: tamano de sobra para imprimir."));
     }
@@ -523,6 +523,43 @@
     });
   }
 
+  /* El estado inicial sale del HTML, no de constantes: asi cada pagina puede
+     traer la herramienta preconfigurada para su caso (wifi, resenas, llavero)
+     sin duplicar ni una linea de JavaScript. */
+  function readInitialState() {
+    var tab = $("[role=tab][aria-selected=true]");
+    if (tab && tab.getAttribute("data-mode")) state.mode = tab.getAttribute("data-mode");
+
+    var d = $("#in-data"); if (d) state.data = d.value;
+    var ss = $("#in-ssid"); if (ss) state.ssid = ss.value;
+    var pw = $("#in-pass"); if (pw) state.pass = pw.value;
+    var en = $("#in-enc"); if (en) state.enc = en.value;
+
+    var sc = $('#style-chips .chip[aria-pressed="true"]');
+    if (sc) state.style = sc.getAttribute("data-style");
+
+    var fg = $("#in-fg"); if (fg) state.fg = fg.value;
+    var bg = $("#in-bg"); if (bg) state.bg = bg.value;
+
+    var fc = $('#format-chips .chip[aria-pressed="true"]');
+    if (fc) state.format = fc.getAttribute("data-format");
+
+    var sz = $("#in-size"); if (sz) state.size = Number(sz.value) || state.size;
+    var tx = $("#in-text"); if (tx) state.text = tx.value;
+    var rl = $("#in-relief"); if (rl) state.relief = Number(rl.value) || state.relief;
+
+    var paneL = $("#pane-link"), paneW = $("#pane-wifi");
+    if (paneL) paneL.hidden = state.mode !== "link";
+    if (paneW) paneW.hidden = state.mode !== "wifi";
+
+    var sv = $("#size-value"); if (sv) sv.textContent = state.size + " mm";
+    var rv = $("#relief-value"); if (rv) rv.textContent = fmt(state.relief, 1) + " mm";
+
+    var cfg = (B.formats || {})[state.format];
+    var hint = $("#format-hint");
+    if (hint && cfg && cfg.hint) hint.textContent = cfg.hint;
+  }
+
   function syncColorInputs() {
     $("#in-fg").value = state.fg;
     $("#in-bg").value = state.bg;
@@ -671,6 +708,7 @@
 
   /* ---------------- arranque ---------------- */
   function boot() {
+    safe(readInitialState, "readInitialState");
     safe(mountPalettes, "mountPalettes");
     safe(mountEmojis, "mountEmojis");
     safe(syncColorInputs, "syncColorInputs");

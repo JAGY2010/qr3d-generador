@@ -3,26 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- NO BORRAR: verifica la propiedad del sitio en Google Search Console.
-     Si esta etiqueta desaparece, se pierde la verificacion y con ella los datos
-     de busqueda y el envio del sitemap. -->
-<meta name="google-site-verification" content="t_wohuDhsOWwIPETF_OjVybB0tiMGKz4otS2VBMCL6g" />
-<title>Código QR para imprimir en 3D gratis | QR3D</title>
-<meta name="description" content="Crea tu código QR personalizado y descárgalo en 3MF a dos colores para imprimir en 3D: soporte de mesa, llavero o placa. También en PNG, SVG y STL. Gratis y sin registro.">
-<link rel="canonical" href="https://lexasylum.com/">
+<title>QR para reseñas de Google en 3D | QR3D</title>
+<meta name="description" content="Genera el codigo QR que lleva directo a dejar una resena en tu ficha de Google y descargalo listo para imprimir en 3D, en un soporte de mesa a dos colores.">
+<link rel="canonical" href="https://lexasylum.com/qr-resenas-google.html">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#151b2b">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_CO">
 <meta property="og:site_name" content="QR3D">
-<meta property="og:title" content="Código QR para imprimir en 3D gratis | QR3D">
-<meta property="og:description" content="Diseña tu QR, elige soporte de mesa, llavero o placa y descárgalo en 3MF a dos colores, listo para tu impresora 3D.">
-<meta property="og:url" content="https://lexasylum.com/">
+<meta property="og:title" content="QR para reseñas de Google en 3D | QR3D">
+<meta property="og:description" content="Genera el codigo QR que lleva directo a dejar una resena en tu ficha de Google y descargalo listo para imprimir en 3D, en un soporte de mesa a dos colores.">
+<meta property="og:url" content="https://lexasylum.com/qr-resenas-google.html">
 <meta property="og:image" content="https://lexasylum.com/assets/img/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- P:HEADASSETS:START -->
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/favicon.svg">
 
@@ -45,27 +40,27 @@
     "three/addons/": "./lib/vendor/three/addons/"
 } }
 </script>
-<!-- P:HEADASSETS:END -->
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "QR3D - Generador de códigos QR para imprimir en 3D",
-  "url": "https://lexasylum.com/",
+  "name": "Generador de QR para reseñas de Google",
+  "url": "https://lexasylum.com/qr-resenas-google.html",
   "applicationCategory": "DesignApplication",
   "operatingSystem": "Cualquiera (navegador web)",
-  "description": "Generador gratuito de códigos QR personalizados con descarga en PNG, SVG, 3MF a dos colores y STL para impresión 3D en soporte de mesa, llavero o placa de pared.",
+  "description": "Genera el codigo QR que lleva directo a dejar una resena en tu ficha de Google y descargalo listo para imprimir en 3D, en un soporte de mesa a dos colores.",
   "inLanguage": "es",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "COP" },
-  "featureList": [
-    "Código QR de enlace, texto o wifi",
-    "Colores, formas de puntos, logo o emoji en el centro",
-    "Descarga en PNG y SVG",
-    "Descarga en 3MF con dos colores incluidos",
-    "Soporte de mesa, llavero y placa de pared",
-    "Descarga en STL para impresoras antiguas"
-  ]
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "COP"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "QR3D",
+    "url": "https://lexasylum.com/"
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -73,23 +68,54 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "¿Qué es un archivo 3MF y por qué es mejor que STL?",
-      "acceptedAnswer": { "@type": "Answer", "text": "El 3MF es el formato estándar de las impresoras 3D modernas. A diferencia del STL, guarda los colores dentro del propio archivo, así que al abrirlo en Bambu Studio, PrusaSlicer, Orca o Cura ya aparece la base con un color y el código en relieve con otro. El STL solo guarda la forma, sin color." },
-      "@id": "#faq-3mf" },
-    { "@type": "Question", "name": "¿Se puede escanear de verdad un código QR impreso en 3D?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí, siempre que haya contraste real entre los dos colores y cada cuadrito del código mida al menos 1,5 mm. Da igual el aparato: cualquier celular o móvil moderno lo lee con la cámara, sin instalar nada. La herramienta calcula ambos datos en vivo y te avisa si tu diseño no va a leerse bien." } },
-    { "@type": "Question", "name": "¿Necesito una impresora de varios colores?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Con una impresora de un solo extrusor puedes hacer un cambio de filamento a la altura en la que empieza el relieve: el programa de tu impresora lo permite con un clic. Si tienes sistema multicolor, el 3MF ya trae cada pieza con su color asignado." } },
-    { "@type": "Question", "name": "¿Cuánto tarda en imprimirse?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Un llavero de 48 mm tarda entre 20 y 40 minutos. Un soporte de mesa de 78 mm, entre 2 y 4 horas según la altura de capa y el relleno." } },
-    { "@type": "Question", "name": "¿Puedo poner el logotipo de mi negocio?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes subir tu logo o elegir un emoji. En la imagen PNG o SVG sale tal cual; en el objeto 3D se convierte automáticamente en una silueta en relieve, porque el relieve se imprime en un solo color." } },
-    { "@type": "Question", "name": "¿Se guarda mi enlace en algún servidor?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Todo el proceso ocurre dentro de tu navegador: el código, la vista 3D y los archivos se generan en tu dispositivo y no se envía nada a ningún servidor." } },
-    { "@type": "Question", "name": "¿Puedo cambiar el enlace después de imprimir?",
-      "acceptedAnswer": { "@type": "Answer", "text": "El código impreso es fijo. Si prevés cambiar el destino, apunta el QR a un enlace corto o a una página tuya que puedas redirigir después: así reutilizas la misma pieza." } },
-    { "@type": "Question", "name": "¿Qué tamaño debe tener un QR para una mesa de restaurante?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Entre 70 y 90 mm de ancho funciona bien a la distancia habitual de una mesa. Por debajo de 55 mm, el código empieza a costar de leer si el enlace es largo." } }
+    {
+      "@type": "Question",
+      "name": "¿Es legal pedir reseñas a mis clientes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pedirlas sí, y Google lo recomienda. Lo que sus normas prohíben es incentivarlas: no puedes ofrecer un descuento, un regalo ni un sorteo a cambio de una reseña. Un soporte en la mesa que invita a opinar está dentro de las reglas; un cartel que diga «reseña de 5 estrellas y te invitamos al café», no."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo hacer que solo los clientes contentos dejen reseña?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, y además va contra las normas de Google. Filtrar a la gente según si va a hablar bien o mal (lo que se llama «filtrado de reseñas») puede costarte que Google actúe contra tu ficha. El QR lleva a todo el mundo al mismo sitio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto sube esto las reseñas de verdad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende de tu negocio, pero el salto grande viene de quitar fricción: la mayoría de clientes contentos no deja reseña simplemente porque implica sacar el teléfono, buscarte y navegar. Un código a un brazo de distancia elimina esos tres pasos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde lo coloco si tengo un local pequeño?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En el mostrador, junto a la caja, orientado hacia el cliente y no hacia ti. Si tienes mesas, una unidad por mesa rinde mucho más que una sola en la entrada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué tamaño de soporte funciona mejor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Entre 75 y 90 mm de ancho. A esa medida se escanea cómodamente desde la distancia normal de una mesa y la pieza sigue siendo discreta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Y si cambio de local o de nombre?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El enlace de reseñas sigue apuntando a tu ficha aunque cambies la dirección o el nombre dentro de ella, así que la pieza te sirve igual. Solo tendrías que reimprimir si creas una ficha nueva desde cero."
+      }
+    }
   ]
 }
 </script>
@@ -97,7 +123,6 @@
 <body>
 <a class="skip-link" href="#herramienta">Saltar a la herramienta</a>
 
-<!-- P:HEADER:START -->
 <header class="site-header">
   <div class="wrap">
     <a class="logo" href="/">
@@ -105,36 +130,31 @@
       <span>QR3D</span>
     </a>
     <nav class="nav-links" aria-label="Secciones">
-      <a href="#como-funciona">Cómo funciona</a>
-      <a href="#ideas">Ideas de uso</a>
+      <a href="index.html#como-funciona">Cómo funciona</a>
+      <a href="index.html#ideas">Ideas de uso</a>
       <a href="#guia">Guía de impresión</a>
       <a href="#mas-herramientas">Más herramientas</a>
       <a href="#faq">Preguntas frecuentes</a>
     </nav>
   </div>
 </header>
-<!-- P:HEADER:END -->
 
 <main id="main">
 
-  <!-- ============================ HERO + HERRAMIENTA ============================ -->
   <section class="hero" id="herramienta">
     <div class="wrap">
       <div class="hero-head">
-        <span class="eyebrow">Gratis · sin registro · 3MF a dos colores</span>
-        <h1>Generador de códigos QR para <em>imprimir en 3D</em></h1>
-        <p class="lead">Pega tu enlace, diseña el código a tu gusto y descárgalo como imagen o como objeto listo para imprimir: soporte de mesa, llavero o placa de pared, con los dos colores ya guardados dentro del archivo.</p>
-<!-- P:BADGES:START -->
+        <span class="eyebrow">Reseñas &middot; soporte de mesa</span>
+        <h1>Generador de <em>QR para reseñas de Google</em></h1>
+        <p class="lead">Pega el enlace de reseñas de tu ficha de empresa y llévate un soporte de mesa listo para imprimir. El cliente escanea, escribe y se va.</p>
         <div class="hero-badges">
           <span class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> 3MF con colores incluidos</span>
           <span class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> Vista 3D girable</span>
           <span class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> PNG, SVG y STL</span>
           <span class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> Sin subir nada a internet</span>
         </div>
-<!-- P:BADGES:END -->
       </div>
 
-<!-- P:TOOL:START -->
       <div class="tool">
         <div class="tool-grid">
 
@@ -159,7 +179,7 @@
               <div id="pane-link" role="tabpanel" aria-labelledby="tab-link" style="margin-top:.9rem">
                 <label class="field">
                   <span class="label">Enlace, texto, teléfono...</span>
-                  <input class="input" type="text" id="in-data" value="https://ejemplo.com/carta" placeholder="https://tunegocio.com" autocomplete="off" spellcheck="false">
+                  <input class="input" type="text" id="in-data" value="https://g.page/r/TU-CODIGO/review" placeholder="https://tunegocio.com" autocomplete="off" spellcheck="false">
                 </label>
                 <p class="hint">Sirve para la carta del restaurante, tu página de reseñas de Google, tu Instagram o cualquier web. Si escribes solo el dominio le añadimos <code>https://</code>.</p>
               </div>
@@ -252,13 +272,13 @@
               </div>
 
               <label class="field">
-                <span class="label"><span>Tamaño</span><b id="size-value" style="color:var(--ink)">78 mm</b></span>
-                <input class="slider" type="range" id="in-size" min="55" max="130" step="1" value="78">
+                <span class="label"><span>Tamaño</span><b id="size-value" style="color:var(--ink)">82 mm</b></span>
+                <input class="slider" type="range" id="in-size" min="55" max="130" step="1" value="82">
               </label>
 
               <label class="field">
                 <span class="label">Texto en relieve (opcional)</span>
-                <input class="input" type="text" id="in-text" maxlength="22" placeholder="Nombre de tu negocio" autocomplete="off">
+                <input class="input" type="text" id="in-text" maxlength="22" value="DÉJANOS TU RESEÑA" placeholder="Nombre de tu negocio" autocomplete="off">
                 <p class="hint">Máximo 22 caracteres. Se imprime en el color del código, igual que el QR.</p>
               </label>
 
@@ -321,9 +341,6 @@
         </div>
       </div>
 
-<!-- P:TOOL:END -->
-      <!-- HUECO DE ANUNCIO: banner horizontal debajo de la herramienta -->
-<!-- P:ADLEADER:START -->
       <div class="ad-slot ad-slot--leaderboard">
         <span class="ad-tag" aria-hidden="true">ANUNCIO</span>
         <span class="ad-size" aria-hidden="true">Banner horizontal 728 x 90</span>
@@ -334,107 +351,25 @@
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         -->
       </div>
-<!-- P:ADLEADER:END -->
     </div>
   </section>
 
-  <!-- ============================ CÓMO FUNCIONA ============================ -->
-  <section class="section" id="como-funciona">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">En 3 pasos</span>
-        <h2>Cómo funciona</h2>
-        <p class="lead">De un enlace a una pieza impresa en tu mesa, sin instalar nada y sin saber diseño 3D.</p>
-      </div>
-      <div class="steps">
-        <article class="step">
-          <div class="step-num">1</div>
-          <h3>Pega tu enlace</h3>
-          <p>La carta del restaurante, tu página de reseñas de Google, tu Instagram, tu web o los datos de la wifi del local. El código se genera al instante mientras escribes.</p>
-        </article>
-        <article class="step">
-          <div class="step-num">2</div>
-          <h3>Dale tu estilo</h3>
-          <p>Elige la forma de los puntos, los dos colores, y pon tu logo o un emoji en el centro. Añade el nombre del negocio y escoge soporte de mesa, llavero o placa.</p>
-        </article>
-        <article class="step">
-          <div class="step-num">3</div>
-          <h3>Descarga e imprime</h3>
-          <p>Bájate el 3MF con los dos colores ya dentro, ábrelo en el programa de tu impresora y dale a imprimir. Cada parte sale con su color y el código se escanea de verdad.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================ IDEAS DE USO ============================ -->
-  <section class="section" id="ideas" style="background:var(--surface-2)">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Ideas</span>
-        <h2>Para qué se usa un QR impreso en 3D</h2>
-        <p class="lead">Una pieza física dura años, no se despega como un adhesivo y da mucha mejor imagen que un papel plastificado.</p>
-      </div>
-      <div class="uses">
-        <article class="use">
-          <span class="ico" aria-hidden="true">&#127869;&#65039;</span>
-          <div><h3>Carta de restaurante</h3><p>Un soporte de mesa con el QR a la carta digital. Se limpia con un paño, no se moja y aguanta el ajetreo del servicio.</p></div>
-        </article>
-        <article class="use">
-          <span class="ico" aria-hidden="true">&#11088;</span>
-          <div><h3>Déjanos una reseña</h3><p>El clásico soporte en la barra o en la mesa apuntando a tu ficha de Google. Es la forma más barata de subir reseñas.</p></div>
-        </article>
-        <article class="use">
-          <span class="ico" aria-hidden="true">&#128246;</span>
-          <div><h3>Wifi para alojamientos</h3><p>Placa de pared en el apartamento turístico o el hotel: el huésped escanea y se conecta sin teclear la contraseña ni preguntarte.</p></div>
-        </article>
-        <article class="use">
-          <span class="ico" aria-hidden="true">&#128273;</span>
-          <div><h3>Llaveros para eventos</h3><p>Bodas, ferias, congresos: un llavero con el QR al álbum de fotos, al programa o a tu perfil profesional. Recuerdo y enlace en la misma pieza.</p></div>
-        </article>
-        <article class="use">
-          <span class="ico" aria-hidden="true">&#128241;</span>
-          <div><h3>Tu Instagram o TikTok</h3><p>En el mostrador de la tienda, en el estudio o en tu puesto de feria. Un escaneo y te siguen, sin buscar tu nombre.</p></div>
-        </article>
-        <article class="use">
-          <span class="ico" aria-hidden="true">&#128736;&#65039;</span>
-          <div><h3>Manuales y mantenimiento</h3><p>Placa atornillada a una máquina, un cuadro eléctrico o una caldera con el QR al manual, al histórico o al teléfono del técnico.</p></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================ GUÍA / TEXTO SEO ============================ -->
   <section class="section" id="guia">
     <div class="wrap wrap--narrow prose">
       <div class="section-head">
-        <span class="eyebrow">Guía rápida</span>
-        <h2>Cómo imprimir un código QR en 3D que se escanee de verdad</h2>
+        <span class="eyebrow">Gu&iacute;a</span>
+        <h2>Cómo montar tu QR de reseñas paso a paso</h2>
       </div>
+      <h3>1. Consigue tu enlace de reseñas</h3>
+      <p>No sirve el enlace de tu ficha ni el de tu web: necesitas el que abre directamente la ventana para escribir la reseña. Se saca desde tu <strong>Perfil de Empresa de Google</strong>, en la opción <strong>Pedir reseñas</strong>, que te da un enlace corto listo para copiar.</p>
+      <p>Si no lo encuentras, hay un camino alternativo: busca tu negocio en Google, entra en sus reseñas, pulsa <em>Escribir una reseña</em> y copia la dirección que aparece en la barra del navegador. Ese enlace también vale.</p>
+      <h3>2. Comprueba que el enlace hace lo que debe</h3>
+      <p>Antes de imprimir nada, ábrelo en tu teléfono. Tiene que saltar directo al cuadro de las estrellas. Si abre tu ficha y hay que buscar el botón, has copiado el enlace equivocado y vas a perder la mitad de las reseñas por el camino: cada clic de más es gente que se cansa.</p>
+      <h3>3. Ponlo donde la gente está esperando</h3>
+      <p>El mejor momento para pedir una reseña es cuando el cliente ya está contento y sin prisa: en la mesa después de comer, en el mostrador mientras cobras, en la sala de espera. Por eso el soporte de mesa funciona mejor que un cartel en la pared: está a la altura de los ojos y a un brazo de distancia.</p>
+      <h3>Qué escribir en el texto en relieve</h3>
+      <p>Tienes 22 caracteres. Funciona mejor una petición directa y humana que el nombre del negocio, que ya saben dónde están. Ideas que caben: <strong>Déjanos tu reseña</strong>, <strong>¿Qué tal estuvo?</strong>, <strong>Cuéntanos qué tal</strong> o <strong>Gracias por tu opinión</strong>.</p>
 
-      <p>Imprimir un código QR en 3D no es lo mismo que imprimir una figura: si el resultado no se lee con el teléfono, la pieza no sirve. Hay tres cosas que deciden si funciona, y esta herramienta las controla por ti mientras diseñas.</p>
-
-      <h3>1. El contraste manda</h3>
-      <p>La cámara del teléfono no ve relieve, ve manchas claras y oscuras. Por eso el objeto se genera en <strong>dos piezas de colores distintos</strong>: la base en un color claro y el código en relieve en uno oscuro. Un QR negro sobre base blanca o beige se lee al primer intento; uno gris sobre gris no se lee nunca, por muy alto que sea el relieve. La herramienta calcula el contraste real entre tus dos colores y te avisa antes de que gastes filamento.</p>
-
-      <h3>2. El tamaño de cada cuadrito</h3>
-      <p>Un código QR está hecho de módulos, los cuadritos pequeños. Si un módulo mide menos de <strong>1,5 mm</strong>, la boquilla de la impresora redondea las esquinas y los cuadritos se juntan: el código se emborrona. Cuanto más largo sea tu enlace, más módulos necesita el código y más pequeños salen. Por eso, si el aviso se pone en rojo, tienes dos soluciones: agrandar el objeto o acortar el enlace.</p>
-
-      <h3>3. El formato 3MF y el color dentro del archivo</h3>
-      <p>El STL de toda la vida solo guarda la forma: al abrirlo, tu programa no sabe qué parte es la base y cuál el código. El <strong>3MF</strong> es el formato estándar de las impresoras modernas y guarda los materiales y los colores dentro del propio archivo. Al abrir el 3MF en Bambu Studio, PrusaSlicer, Orca Slicer o Cura, verás directamente dos objetos, cada uno con su color asignado. Si tienes una impresora de un solo color, basta con programar un cambio de filamento a la altura donde empieza el relieve.</p>
-
-      <h3>Ajustes recomendados en tu programa de impresión</h3>
-      <ul>
-        <li><strong>Altura de capa:</strong> 0,2 mm va perfecto. Con 0,12 mm los bordes salen algo más limpios.</li>
-        <li><strong>Relleno:</strong> 15 % es de sobra para una placa o un llavero.</li>
-        <li><strong>Soportes:</strong> ninguno. Los tres formatos están pensados para imprimirse tal cual, apoyados en la cama.</li>
-        <li><strong>Altura del relieve:</strong> 1,2 mm es el punto dulce. Menos se nota poco, más alarga la impresión sin mejorar la lectura.</li>
-        <li><strong>Filamento:</strong> PLA mate para la base evita brillos que despistan a la cámara del teléfono.</li>
-      </ul>
-
-      <h3>Antes de imprimir 50 unidades</h3>
-      <p>Escanea el código directamente desde la pantalla con tu teléfono: si en la pantalla no funciona, impreso tampoco lo hará. Y si vas a imprimir muchas unidades, haz primero una de prueba y escáneala con dos teléfonos distintos, uno Android y uno iPhone.</p>
-
-<!-- P:ADINCONTENT:START -->
       <!-- HUECO DE ANUNCIO: bloque en mitad del contenido -->
       <div class="ad-slot ad-slot--incontent">
         <span class="ad-tag" aria-hidden="true">ANUNCIO</span>
@@ -446,14 +381,9 @@
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         -->
       </div>
-<!-- P:ADINCONTENT:END -->
-
-      <h3>¿Y si mi impresora es antigua?</h3>
-      <p>También puedes descargar el objeto en <strong>STL</strong>. En ese caso te bajas un .zip con dos archivos, uno por cada pieza: importa los dos en tu programa, colócalos ambos en el origen (0, 0) y asigna un filamento a cada uno. El resultado es el mismo, solo que el color lo eliges tú a mano en vez de venir dentro del archivo.</p>
     </div>
   </section>
 
-  <!-- ============================ FAQ ============================ -->
   <section class="section" id="faq" style="background:var(--surface-2)">
     <div class="wrap wrap--narrow">
       <div class="section-head">
@@ -461,36 +391,28 @@
         <h2>Preguntas frecuentes</h2>
       </div>
       <div class="faq">
-        <details class="acc"><summary>¿Qué es un archivo 3MF y por qué es mejor que STL?</summary>
-          <div><p>El 3MF es el formato estándar de las impresoras 3D modernas. A diferencia del STL, guarda los colores dentro del propio archivo, así que al abrirlo en Bambu Studio, PrusaSlicer, Orca o Cura ya aparece la base con un color y el código en relieve con otro. El STL solo guarda la forma, sin ninguna información de color.</p></div>
+        <details class="acc"><summary>¿Es legal pedir reseñas a mis clientes?</summary>
+          <div><p>Pedirlas sí, y Google lo recomienda. Lo que sus normas prohíben es <strong>incentivarlas</strong>: no puedes ofrecer un descuento, un regalo ni un sorteo a cambio de una reseña. Un soporte en la mesa que invita a opinar está dentro de las reglas; un cartel que diga «reseña de 5 estrellas y te invitamos al café», no.</p></div>
         </details>
-        <details class="acc"><summary>¿Se puede escanear de verdad un código QR impreso en 3D?</summary>
-          <div><p>Sí, siempre que haya contraste real entre los dos colores y cada cuadrito del código mida al menos 1,5 mm. Da igual el aparato: cualquier celular o móvil moderno lo lee con la cámara, sin instalar nada. La herramienta calcula ambos datos en vivo y te avisa si tu diseño no va a leerse bien, antes de que gastes filamento.</p></div>
+        <details class="acc"><summary>¿Puedo hacer que solo los clientes contentos dejen reseña?</summary>
+          <div><p>No, y además va contra las normas de Google. Filtrar a la gente según si va a hablar bien o mal (lo que se llama «filtrado de reseñas») puede costarte que Google actúe contra tu ficha. El QR lleva a todo el mundo al mismo sitio.</p></div>
         </details>
-        <details class="acc"><summary>¿Necesito una impresora de varios colores?</summary>
-          <div><p>No. Con una impresora de un solo extrusor puedes programar un cambio de filamento a la altura en la que empieza el relieve: todos los programas de impresión lo permiten con un clic. Si tienes sistema multicolor (AMS, MMU o similar), el 3MF ya trae cada pieza con su color asignado y no tienes que tocar nada.</p></div>
+        <details class="acc"><summary>¿Cuánto sube esto las reseñas de verdad?</summary>
+          <div><p>Depende de tu negocio, pero el salto grande viene de quitar fricción: la mayoría de clientes contentos no deja reseña simplemente porque implica sacar el teléfono, buscarte y navegar. Un código a un brazo de distancia elimina esos tres pasos.</p></div>
         </details>
-        <details class="acc"><summary>¿Cuánto tarda en imprimirse?</summary>
-          <div><p>Un llavero de 48 mm tarda entre 20 y 40 minutos. Un soporte de mesa de 78 mm, entre 2 y 4 horas según la altura de capa y el relleno. Una placa de pared de 95 mm, alrededor de una hora.</p></div>
+        <details class="acc"><summary>¿Dónde lo coloco si tengo un local pequeño?</summary>
+          <div><p>En el mostrador, junto a la caja, orientado hacia el cliente y no hacia ti. Si tienes mesas, una unidad por mesa rinde mucho más que una sola en la entrada.</p></div>
         </details>
-        <details class="acc"><summary>¿Puedo poner el logotipo de mi negocio?</summary>
-          <div><p>Sí. Puedes subir tu logo o elegir un emoji. En la imagen PNG o SVG sale tal cual, con sus colores; en el objeto 3D se convierte automáticamente en una silueta en relieve, porque el relieve se imprime en un solo color. Cuando pones algo en el centro subimos la corrección de errores del código al máximo para que siga leyéndose.</p></div>
+        <details class="acc"><summary>¿Qué tamaño de soporte funciona mejor?</summary>
+          <div><p>Entre 75 y 90 mm de ancho. A esa medida se escanea cómodamente desde la distancia normal de una mesa y la pieza sigue siendo discreta.</p></div>
         </details>
-        <details class="acc"><summary>¿Se guarda mi enlace en algún servidor?</summary>
-          <div><p>No. Todo el proceso ocurre dentro de tu navegador: el código, la vista 3D y los archivos se generan en tu dispositivo. No hay cuentas, no hay registro y no se envía nada a ningún servidor.</p></div>
-        </details>
-        <details class="acc"><summary>¿Puedo cambiar el enlace después de imprimir?</summary>
-          <div><p>El código impreso es fijo. Si prevés cambiar el destino, apunta el QR a un enlace corto o a una página tuya que puedas redirigir después: así reutilizas la misma pieza sin volver a imprimirla.</p></div>
-        </details>
-        <details class="acc"><summary>¿Qué tamaño debe tener un QR para una mesa de restaurante?</summary>
-          <div><p>Entre 70 y 90 mm de ancho funciona bien a la distancia habitual de una mesa. Por debajo de 55 mm el código empieza a costar de leer si el enlace es largo. Para un llavero, acorta el enlace todo lo que puedas.</p></div>
-        </details>
-        <details class="acc"><summary>¿Puedo venderlos?</summary>
-          <div><p>Sí. Los archivos que generas son tuyos y puedes imprimirlos y venderlos sin pedir permiso ni pagar licencias. Muchos negocios de impresión 3D los venden a bares, peluquerías y tiendas de su ciudad.</p></div>
+        <details class="acc"><summary>¿Y si cambio de local o de nombre?</summary>
+          <div><p>El enlace de reseñas sigue apuntando a tu ficha aunque cambies la dirección o el nombre dentro de ella, así que la pieza te sirve igual. Solo tendrías que reimprimir si creas una ficha nueva desde cero.</p></div>
         </details>
       </div>
     </div>
   </section>
+
   <!-- P:MORE:START -->
   <section class="section" id="mas-herramientas" style="background:var(--surface-2)">
     <div class="wrap">
@@ -500,13 +422,13 @@
         <p class="lead">La misma herramienta, preparada para cada caso.</p>
       </div>
       <div class="uses">
+        <a class="use" href="index.html">
+          <span class="ico" aria-hidden="true">&#128736;&#65039;</span>
+          <div><h3>El generador completo</h3><p>Los tres formatos, todos los estilos y la guía de impresión.</p></div>
+        </a>
         <a class="use" href="qr-wifi.html">
           <span class="ico" aria-hidden="true">&#128246;</span>
           <div><h3>QR de wifi</h3><p>El código de tu red en una placa, para apartamentos y locales.</p></div>
-        </a>
-        <a class="use" href="qr-resenas-google.html">
-          <span class="ico" aria-hidden="true">&#11088;</span>
-          <div><h3>QR para reseñas de Google</h3><p>Soporte de mesa que lleva directo a valorar tu negocio.</p></div>
         </a>
         <a class="use" href="qr-llavero.html">
           <span class="ico" aria-hidden="true">&#128273;</span>
@@ -518,7 +440,6 @@
   <!-- P:MORE:END -->
 </main>
 
-<!-- P:FOOTER:START -->
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
@@ -551,10 +472,7 @@
     </div>
   </div>
 </footer>
-<!-- P:FOOTER:END -->
 
-<!-- HUECO DE ANUNCIO: ventana emergente al descargar (con botón de cerrar) -->
-<!-- P:OVERLAYS:START -->
 <dialog class="ad-modal" id="ad-modal" aria-labelledby="ad-modal-title">
   <div class="ad-modal-head">
     <strong id="ad-modal-title">ANUNCIO</strong>
@@ -595,14 +513,11 @@
     -->
   </div>
 </aside>
-<!-- P:OVERLAYS:END -->
 
-<!-- P:SCRIPTS:START -->
 <script defer src="lib/vendor/qr-code-styling.js"></script>
 <script defer src="lib/vendor/jszip.min.js"></script>
 <script defer src="lib/manifest.js?v=20260819"></script>
 <script defer src="qr3d.js?v=20260819"></script>
 <script defer src="main.js?v=20260819"></script>
-<!-- P:SCRIPTS:END -->
 </body>
 </html>
