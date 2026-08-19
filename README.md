@@ -84,3 +84,12 @@ con los datos que hay que rellenar.
 
 Código propio sin licencia pública. Las librerías de terceros conservan sus
 licencias MIT originales dentro de `lib/vendor/`.
+
+## Publicado
+
+- Repositorio: https://github.com/JAGY2010/qr3d-generador
+- Web en vivo (dominio temporal de Railway): https://qr3d-production.up.railway.app
+
+Cuando conectes un dominio propio, sustituye `qr3d-production.up.railway.app`
+por el tuyo en `index.html` (canonical y `og:`), `privacidad.html`,
+`aviso-legal.html`, `sitemap.xml` y `robots.txt`.

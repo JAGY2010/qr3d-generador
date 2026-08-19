@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://qr3d.app/sitemap.xml
+Sitemap: https://qr3d-production.up.railway.app/sitemap.xml
