@@ -26,8 +26,11 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap">
 <link rel="stylesheet" href="styles.css?v=20260819">
 
-<!-- TODO (propietario): pegar aquí el script de tu gestor de consentimiento de cookies (CMP)
-     antes de activar AdSense. Esta web no incluye scripts de terceros. -->
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1968948020574146"
+     crossorigin="anonymous"></script>
+<!-- Aviso de cookies: se activa desde AdSense > Privacidad y mensajes.
+     Google lo sirve con este mismo script, no hay que pegar nada mas aqui. -->
 
 <!-- El mapa de importaciones resuelve "three" y "three/addons/" para el import()
      dinámico que hace qr3d.js. No es un script de tipo modulo. -->
@@ -307,10 +310,15 @@
       </div>
 
       <!-- HUECO DE ANUNCIO: banner horizontal debajo de la herramienta -->
-      <div class="ad-slot ad-slot--leaderboard" aria-hidden="true">
-        <span class="ad-tag">ANUNCIO</span>
-        <span class="ad-size">Banner horizontal 728 x 90</span>
-        <!-- PEGA AQUÍ TU CÓDIGO DE ADSENSE -->
+      <div class="ad-slot ad-slot--leaderboard">
+        <span class="ad-tag" aria-hidden="true">ANUNCIO</span>
+        <span class="ad-size" aria-hidden="true">Banner horizontal 728 x 90</span>
+        <!-- TU ANUNCIO AQUI. En AdSense: Anuncios > Por bloque de anuncios > crear bloque,
+             copia su data-ad-slot, borra los dos <span> de arriba y quita estos comentarios:
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1968948020574146"
+             data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
       </div>
     </div>
   </section>
@@ -412,10 +420,15 @@
       <p>Escanea el código directamente desde la pantalla con tu teléfono: si en la pantalla no funciona, impreso tampoco lo hará. Y si vas a imprimir muchas unidades, haz primero una de prueba y escáneala con dos teléfonos distintos, uno Android y uno iPhone.</p>
 
       <!-- HUECO DE ANUNCIO: bloque en mitad del contenido -->
-      <div class="ad-slot ad-slot--incontent" aria-hidden="true">
-        <span class="ad-tag">ANUNCIO</span>
-        <span class="ad-size">Rectángulo 336 x 280</span>
-        <!-- PEGA AQUÍ TU CÓDIGO DE ADSENSE -->
+      <div class="ad-slot ad-slot--incontent">
+        <span class="ad-tag" aria-hidden="true">ANUNCIO</span>
+        <span class="ad-size" aria-hidden="true">Rectángulo 336 x 280</span>
+        <!-- TU ANUNCIO AQUI. En AdSense: Anuncios > Por bloque de anuncios > crear bloque,
+             copia su data-ad-slot, borra los dos <span> de arriba y quita estos comentarios:
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1968948020574146"
+             data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
       </div>
 
       <h3>¿Y si mi impresora es antigua?</h3>
@@ -505,10 +518,15 @@
   </div>
   <div class="ad-modal-body">
     <p class="ad-modal-note" id="ad-modal-note">Tu descarga ya ha empezado.</p>
-    <div class="ad-slot ad-slot--modal" aria-hidden="true">
-      <span class="ad-tag">ANUNCIO</span>
-      <span class="ad-size">Rectángulo 300 x 250</span>
-      <!-- PEGA AQUÍ TU CÓDIGO DE ADSENSE -->
+    <div class="ad-slot ad-slot--modal">
+      <span class="ad-tag" aria-hidden="true">ANUNCIO</span>
+      <span class="ad-size" aria-hidden="true">Rectángulo 300 x 250</span>
+      <!-- TU ANUNCIO AQUI. En AdSense: Anuncios > Por bloque de anuncios > crear bloque,
+           copia su data-ad-slot, borra los dos <span> de arriba y quita estos comentarios:
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1968948020574146"
+           data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      -->
     </div>
   </div>
   <div class="ad-modal-foot">
@@ -522,10 +540,15 @@
     <strong>ANUNCIO</strong>
     <button type="button" class="ad-close" id="ad-toast-close" aria-label="Cerrar anuncio" style="width:26px;height:26px;font-size:1rem">&times;</button>
   </div>
-  <div class="ad-slot" aria-hidden="true">
-    <span class="ad-tag">ANUNCIO</span>
-    <span class="ad-size">250 x 100</span>
-    <!-- PEGA AQUÍ TU CÓDIGO DE ADSENSE -->
+  <div class="ad-slot">
+    <span class="ad-tag" aria-hidden="true">ANUNCIO</span>
+    <span class="ad-size" aria-hidden="true">250 x 100</span>
+    <!-- TU ANUNCIO AQUI. En AdSense: Anuncios > Por bloque de anuncios > crear bloque,
+         copia su data-ad-slot, borra los dos <span> de arriba y quita estos comentarios:
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1968948020574146"
+         data-ad-slot="XXXXXXXXXX" data-ad-format="horizontal"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
   </div>
 </aside>
 
