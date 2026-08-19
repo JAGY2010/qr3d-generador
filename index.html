@@ -68,7 +68,7 @@
       "acceptedAnswer": { "@type": "Answer", "text": "El 3MF es el formato estándar de las impresoras 3D modernas. A diferencia del STL, guarda los colores dentro del propio archivo, así que al abrirlo en Bambu Studio, PrusaSlicer, Orca o Cura ya aparece la base con un color y el código en relieve con otro. El STL solo guarda la forma, sin color." },
       "@id": "#faq-3mf" },
     { "@type": "Question", "name": "¿Se puede escanear de verdad un código QR impreso en 3D?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí, siempre que haya contraste real entre los dos colores y cada cuadrito del código mida al menos 1,5 mm. La herramienta calcula ambos datos en vivo y te avisa si tu diseño no va a leerse bien." } },
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, siempre que haya contraste real entre los dos colores y cada cuadrito del código mida al menos 1,5 mm. Da igual el aparato: cualquier celular o móvil moderno lo lee con la cámara, sin instalar nada. La herramienta calcula ambos datos en vivo y te avisa si tu diseño no va a leerse bien." } },
     { "@type": "Question", "name": "¿Necesito una impresora de varios colores?",
       "acceptedAnswer": { "@type": "Answer", "text": "No. Con una impresora de un solo extrusor puedes hacer un cambio de filamento a la altura en la que empieza el relieve: el programa de tu impresora lo permite con un clic. Si tienes sistema multicolor, el 3MF ya trae cada pieza con su color asignado." } },
     { "@type": "Question", "name": "¿Cuánto tarda en imprimirse?",
@@ -146,7 +146,7 @@
                   <span class="label">Enlace, texto, teléfono...</span>
                   <input class="input" type="text" id="in-data" value="https://ejemplo.com/carta" placeholder="https://tunegocio.com" autocomplete="off" spellcheck="false">
                 </label>
-                <p class="hint">Vale la carta del restaurante, tu página de reseñas de Google, tu Instagram o cualquier web. Si escribes solo el dominio le añadimos <code>https://</code>.</p>
+                <p class="hint">Sirve para la carta del restaurante, tu página de reseñas de Google, tu Instagram o cualquier web. Si escribes solo el dominio le añadimos <code>https://</code>.</p>
               </div>
 
               <div id="pane-wifi" role="tabpanel" aria-labelledby="tab-wifi" hidden style="margin-top:.9rem">
@@ -349,12 +349,12 @@
       <div class="section-head">
         <span class="eyebrow">Ideas</span>
         <h2>Para qué se usa un QR impreso en 3D</h2>
-        <p class="lead">Una pieza física dura años, no se despega como una pegatina y da mucha mejor imagen que un papel plastificado.</p>
+        <p class="lead">Una pieza física dura años, no se despega como un adhesivo y da mucha mejor imagen que un papel plastificado.</p>
       </div>
       <div class="uses">
         <article class="use">
           <span class="ico" aria-hidden="true">&#127869;&#65039;</span>
-          <div><h3>Carta de restaurante</h3><p>Un soporte de mesa con el QR a la carta digital. Se limpia con un paño, no se moja y aguanta el trajín del servicio.</p></div>
+          <div><h3>Carta de restaurante</h3><p>Un soporte de mesa con el QR a la carta digital. Se limpia con un paño, no se moja y aguanta el ajetreo del servicio.</p></div>
         </article>
         <article class="use">
           <span class="ico" aria-hidden="true">&#11088;</span>
@@ -370,7 +370,7 @@
         </article>
         <article class="use">
           <span class="ico" aria-hidden="true">&#128241;</span>
-          <div><h3>Tu Instagram o TikTok</h3><p>En el mostrador de la tienda, en el estudio o en el puesto del mercado. Un escaneo y te siguen, sin buscar tu nombre.</p></div>
+          <div><h3>Tu Instagram o TikTok</h3><p>En el mostrador de la tienda, en el estudio o en tu puesto de feria. Un escaneo y te siguen, sin buscar tu nombre.</p></div>
         </article>
         <article class="use">
           <span class="ico" aria-hidden="true">&#128736;&#65039;</span>
@@ -388,10 +388,10 @@
         <h2>Cómo imprimir un código QR en 3D que se escanee de verdad</h2>
       </div>
 
-      <p>Imprimir un código QR en 3D no es lo mismo que imprimir una figura: si el resultado no se lee con el móvil, la pieza no sirve. Hay tres cosas que deciden si funciona, y esta herramienta las controla por ti mientras diseñas.</p>
+      <p>Imprimir un código QR en 3D no es lo mismo que imprimir una figura: si el resultado no se lee con el teléfono, la pieza no sirve. Hay tres cosas que deciden si funciona, y esta herramienta las controla por ti mientras diseñas.</p>
 
       <h3>1. El contraste manda</h3>
-      <p>La cámara del móvil no ve relieve, ve manchas claras y oscuras. Por eso el objeto se genera en <strong>dos piezas de colores distintos</strong>: la base en un color claro y el código en relieve en uno oscuro. Un QR negro sobre base blanca o beige se lee al primer intento; uno gris sobre gris no se lee nunca, por muy alto que sea el relieve. La herramienta calcula el contraste real entre tus dos colores y te avisa antes de que gastes filamento.</p>
+      <p>La cámara del teléfono no ve relieve, ve manchas claras y oscuras. Por eso el objeto se genera en <strong>dos piezas de colores distintos</strong>: la base en un color claro y el código en relieve en uno oscuro. Un QR negro sobre base blanca o beige se lee al primer intento; uno gris sobre gris no se lee nunca, por muy alto que sea el relieve. La herramienta calcula el contraste real entre tus dos colores y te avisa antes de que gastes filamento.</p>
 
       <h3>2. El tamaño de cada cuadrito</h3>
       <p>Un código QR está hecho de módulos, los cuadritos pequeños. Si un módulo mide menos de <strong>1,5 mm</strong>, la boquilla de la impresora redondea las esquinas y los cuadritos se juntan: el código se emborrona. Cuanto más largo sea tu enlace, más módulos necesita el código y más pequeños salen. Por eso, si el aviso se pone en rojo, tienes dos soluciones: agrandar el objeto o acortar el enlace.</p>
@@ -405,11 +405,11 @@
         <li><strong>Relleno:</strong> 15 % es de sobra para una placa o un llavero.</li>
         <li><strong>Soportes:</strong> ninguno. Los tres formatos están pensados para imprimirse tal cual, apoyados en la cama.</li>
         <li><strong>Altura del relieve:</strong> 1,2 mm es el punto dulce. Menos se nota poco, más alarga la impresión sin mejorar la lectura.</li>
-        <li><strong>Filamento:</strong> PLA mate para la base evita brillos que despistan a la cámara del móvil.</li>
+        <li><strong>Filamento:</strong> PLA mate para la base evita brillos que despistan a la cámara del teléfono.</li>
       </ul>
 
       <h3>Antes de imprimir 50 unidades</h3>
-      <p>Escanea el código directamente desde la pantalla con tu móvil: si en la pantalla no funciona, impreso tampoco lo hará. Y si vas a hacer una tirada, imprime una unidad de prueba y escánéala con dos móviles distintos, uno Android y uno iPhone.</p>
+      <p>Escanea el código directamente desde la pantalla con tu teléfono: si en la pantalla no funciona, impreso tampoco lo hará. Y si vas a imprimir muchas unidades, haz primero una de prueba y escáneala con dos teléfonos distintos, uno Android y uno iPhone.</p>
 
       <!-- HUECO DE ANUNCIO: bloque en mitad del contenido -->
       <div class="ad-slot ad-slot--incontent" aria-hidden="true">
@@ -435,7 +435,7 @@
           <div><p>El 3MF es el formato estándar de las impresoras 3D modernas. A diferencia del STL, guarda los colores dentro del propio archivo, así que al abrirlo en Bambu Studio, PrusaSlicer, Orca o Cura ya aparece la base con un color y el código en relieve con otro. El STL solo guarda la forma, sin ninguna información de color.</p></div>
         </details>
         <details class="acc"><summary>¿Se puede escanear de verdad un código QR impreso en 3D?</summary>
-          <div><p>Sí, siempre que haya contraste real entre los dos colores y cada cuadrito del código mida al menos 1,5 mm. La herramienta calcula ambos datos en vivo y te avisa si tu diseño no va a leerse bien, antes de que gastes filamento.</p></div>
+          <div><p>Sí, siempre que haya contraste real entre los dos colores y cada cuadrito del código mida al menos 1,5 mm. Da igual el aparato: cualquier celular o móvil moderno lo lee con la cámara, sin instalar nada. La herramienta calcula ambos datos en vivo y te avisa si tu diseño no va a leerse bien, antes de que gastes filamento.</p></div>
         </details>
         <details class="acc"><summary>¿Necesito una impresora de varios colores?</summary>
           <div><p>No. Con una impresora de un solo extrusor puedes programar un cambio de filamento a la altura en la que empieza el relieve: todos los programas de impresión lo permiten con un clic. Si tienes sistema multicolor (AMS, MMU o similar), el 3MF ya trae cada pieza con su color asignado y no tienes que tocar nada.</p></div>

@@ -305,7 +305,7 @@
     }
 
     if (state.center) {
-      out.push(note("warn", "Con logo o emoji en el centro se tapan modulos. Ya subimos la correccion de errores al maximo, pero prueba a escanear una unidad antes de imprimir una tirada."));
+      out.push(note("warn", "Con logo o emoji en el centro se tapan modulos. Ya subimos la correccion de errores al maximo, pero prueba a escanear una unidad antes de imprimir muchas."));
     }
 
     checks.innerHTML = out.join("");
