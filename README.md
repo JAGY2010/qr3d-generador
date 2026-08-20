@@ -88,11 +88,29 @@ licencias MIT originales dentro de `lib/vendor/`.
 ## Publicado
 
 - Repositorio: https://github.com/JAGY2010/qr3d-generador
-- Web en vivo (dominio temporal de Railway): https://lexasylum.com
+- Web en vivo: **https://lexasylum.com** (alojada en Railway)
 
 El servicio de Railway esta conectado a este repositorio: **cada push a `main`
-se publica solo**, sin tocar nada mas.
+se publica solo**, sin tocar nada mas. La direccion antigua
+`qr3d-production.up.railway.app` devuelve un 301 al dominio oficial.
 
-Cuando conectes un dominio propio, sustituye `qr3d-production.up.railway.app`
-por el tuyo en `index.html` (canonical y `og:`), `privacidad.html`,
-`aviso-legal.html`, `sitemap.xml` y `robots.txt`.
+Paginas publicadas: la portada (generador completo) y tres paginas satelite
+generadas con `scripts/build_pages.py` (`qr-wifi.html`,
+`qr-resenas-google.html`, `qr-llavero.html`).
+
+### Si algun dia cambia el dominio
+
+Sustituyelo en `index.html` (canonical y `og:`), `privacidad.html`,
+`aviso-legal.html`, `robots.txt`, la constante `SITE` de
+`scripts/build_pages.py` y `CANONICAL_HOST` en `server.js`; despues ejecuta
+`python scripts/build_pages.py` para regenerar las paginas y el sitemap.
+
+### Monetizacion
+
+AdSense esta instalado (editor `pub-1968948020574146`) y `ads.txt` esta en la
+raiz del dominio, verificado por Google. Los cuatro huecos siguen siendo
+placeholders: falta pegar el `data-ad-slot` de cada bloque creado en AdSense
+(los `<ins>` ya estan preparados en el HTML, comentados).
+
+Verificado en Google Search Console con la etiqueta `google-site-verification`
+del `<head>` de `index.html`: **no borrarla**.
