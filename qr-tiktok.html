@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QR para TikTok en 3D | QR3D</title>
+<meta name="description" content="Genera el codigo QR de tu perfil de TikTok y descargalo listo para imprimir en 3D, en una placa a dos colores para colgar en tu local o tu puesto.">
+<link rel="canonical" href="https://lexasylum.com/qr-tiktok.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#151b2b">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="QR3D">
+<meta property="og:title" content="QR para TikTok en 3D | QR3D">
+<meta property="og:description" content="Genera el codigo QR de tu perfil de TikTok y descargalo listo para imprimir en 3D, en una placa a dos colores para colgar en tu local o tu puesto.">
+<meta property="og:url" content="https://lexasylum.com/qr-tiktok.html">
+<meta property="og:image" content="https://lexasylum.com/assets/img/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap">
+<link rel="stylesheet" href="styles.css?v=20260819">
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1968948020574146"
+     crossorigin="anonymous"></script>
+<!-- Aviso de cookies: se activa desde AdSense > Privacidad y mensajes.
+     Google lo sirve con este mismo script, no hay que pegar nada mas aqui. -->
+
+<!-- El mapa de importaciones resuelve "three" y "three/addons/" para el import()
+     dinámico que hace qr3d.js. No es un script de tipo modulo. -->
+<script type="importmap">
+{ "imports": {
+    "three": "./lib/vendor/three/three.module.min.js",
+    "three/addons/": "./lib/vendor/three/addons/"
+} }
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Generador de QR para TikTok para imprimir en 3D",
+  "url": "https://lexasylum.com/qr-tiktok.html",
+  "applicationCategory": "DesignApplication",
+  "operatingSystem": "Cualquiera (navegador web)",
+  "description": "Genera el codigo QR de tu perfil de TikTok y descargalo listo para imprimir en 3D, en una placa a dos colores para colgar en tu local o tu puesto.",
+  "inLanguage": "es",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "COP"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "QR3D",
+    "url": "https://lexasylum.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Tengo que incluir la arroba en la dirección?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. En TikTok la dirección del perfil lleva la arroba dentro: tiktok.com/@tuusuario. Sin ella el enlace no funciona. Lo más seguro es copiarla desde el navegador."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Funciona si quien escanea no tiene TikTok?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, se abre el perfil en el navegador. Si tiene la aplicación instalada, normalmente se abre directamente en ella."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo usar el código que genera TikTok dentro de la app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para compartir entre teléfonos sirve. Para imprimir no: es una imagen fija con los colores de la aplicación y no se puede convertir en una pieza con relieve y tus colores."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Mejor apuntar a un vídeo concreto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No lo recomendamos. El enlace es largo, el código sale más denso y el vídeo se queda desactualizado mientras la placa sigue colgada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿De qué tamaño hago la placa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Entre 90 y 110 mm si va en una pared y la gente la escanea desde medio metro o menos. Si va más alta o más lejos, agranda la pieza."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo la cuelgo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trae dos agujeros arriba para tornillos o alcayatas. Para una pared lisa o un escaparate también aguanta con cinta de doble cara, porque la pieza pesa muy poco."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#herramienta">Saltar a la herramienta</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">
+      <span class="logo-mark" aria-hidden="true">QR</span>
+      <span>QR3D</span>
+    </a>
+    <nav class="nav-links" aria-label="Secciones">
+      <a href="index.html#como-funciona">Cómo funciona</a>
+      <a href="index.html#ideas">Ideas de uso</a>
+      <a href="#guia">Guía de impresión</a>
+      <a href="#mas-herramientas">Más herramientas</a>
+      <a href="#faq">Preguntas frecuentes</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="herramienta">
+    <div class="wrap">
+      <div class="hero-head">
+        <span class="eyebrow">TikTok &middot; placa para colgar</span>
+        <h1>Generador de <em>QR para TikTok</em> para imprimir en 3D</h1>
+        <p class="lead">Pega la dirección de tu perfil y llévate una placa lista para imprimir y colgar. Quien la escanee llega a tus vídeos sin buscarte a mano.</p>
+        <div class="hero-badges">
+          <span class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> 3MF con colores incluidos</span>
+          <span class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> Vista 3D girable</span>
+          <span class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> PNG, SVG y STL</span>
+          <span class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> Sin subir nada a internet</span>
+        </div>
+      </div>
+
+      <div class="tool">
+        <div class="tool-grid">
+
+          <!-- ---------------- COLUMNA DE CONTROLES ---------------- -->
+          <div class="tool-controls">
+
+            <noscript>
+              <div class="note note--warn" style="margin-bottom:1rem">
+                <span>Esta herramienta necesita JavaScript activado para generar el código y el archivo 3D. El resto de la página funciona igual.</span>
+              </div>
+            </noscript>
+
+            <!-- 1. Contenido -->
+            <div class="panel">
+              <h2 class="panel-title"><span class="num">1</span> Qué quieres que abra el código</h2>
+
+              <div class="seg" role="tablist" aria-label="Tipo de contenido">
+                <button type="button" role="tab" id="tab-link" aria-selected="true" aria-controls="pane-link" data-mode="link">Enlace o texto</button>
+                <button type="button" role="tab" id="tab-wifi" aria-selected="false" aria-controls="pane-wifi" data-mode="wifi">Wifi</button>
+              </div>
+
+              <div id="pane-link" role="tabpanel" aria-labelledby="tab-link" style="margin-top:.9rem">
+                <label class="field">
+                  <span class="label">Enlace, texto, teléfono...</span>
+                  <input class="input" type="text" id="in-data" value="https://tiktok.com/@tunegocio" placeholder="https://tunegocio.com" autocomplete="off" spellcheck="false">
+                </label>
+                <p class="hint">Sirve para la carta del restaurante, tu página de reseñas de Google, tu Instagram o cualquier web. Si escribes solo el dominio le añadimos <code>https://</code>.</p>
+              </div>
+
+              <div id="pane-wifi" role="tabpanel" aria-labelledby="tab-wifi" hidden style="margin-top:.9rem">
+                <div class="grid-2">
+                  <label class="field"><span class="label">Nombre de la red</span>
+                    <input class="input" type="text" id="in-ssid" placeholder="MiWifi" autocomplete="off"></label>
+                  <label class="field"><span class="label">Contraseña</span>
+                    <input class="input" type="text" id="in-pass" placeholder="contraseña" autocomplete="off"></label>
+                </div>
+                <label class="field"><span class="label">Seguridad</span>
+                  <select class="select" id="in-enc">
+                    <option value="WPA" selected>WPA / WPA2 / WPA3</option>
+                    <option value="WEP">WEP</option>
+                    <option value="nopass">Red abierta (sin contraseña)</option>
+                  </select>
+                </label>
+                <p class="hint">Quien escanee el código se conecta a la wifi sin teclear la contraseña. Ideal para apartamentos turísticos, bares y oficinas.</p>
+              </div>
+            </div>
+
+            <!-- 2. Diseño -->
+            <div class="panel">
+              <h2 class="panel-title"><span class="num">2</span> Diseño del código</h2>
+
+              <div class="field">
+                <span class="label">Estilo</span>
+                <div class="chips" id="style-chips" role="group" aria-label="Estilo del código">
+                  <button type="button" class="chip" data-style="clasico" aria-pressed="true">Clásico</button>
+                  <button type="button" class="chip" data-style="redondeado" aria-pressed="false">Redondeado</button>
+                  <button type="button" class="chip" data-style="puntos" aria-pressed="false">Puntos</button>
+                  <button type="button" class="chip" data-style="elegante" aria-pressed="false">Elegante</button>
+                </div>
+              </div>
+
+              <div class="field">
+                <span class="label">Colores <span style="font-weight:500;color:var(--ink-mute)">se usan en la imagen y en el objeto 3D</span></span>
+                <div class="color-row">
+                  <div class="field">
+                    <span class="label">Código y texto</span>
+                    <div class="color-field">
+                      <input type="color" id="in-fg" value="#141821" aria-label="Color del código y del texto">
+                      <input type="text" id="in-fg-hex" value="#141821" spellcheck="false" aria-label="Color del código en hexadecimal">
+                    </div>
+                  </div>
+                  <button type="button" class="swap-btn" id="btn-swap" title="Intercambiar colores" aria-label="Intercambiar colores">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+                  </button>
+                  <div class="field">
+                    <span class="label">Fondo y base</span>
+                    <div class="color-field">
+                      <input type="color" id="in-bg" value="#f4f2ec" aria-label="Color del fondo y de la base">
+                      <input type="text" id="in-bg-hex" value="#F4F2EC" spellcheck="false" aria-label="Color del fondo en hexadecimal">
+                    </div>
+                  </div>
+                </div>
+                <div class="swatches" id="palettes" style="margin-top:.6rem" role="group" aria-label="Combinaciones sugeridas"></div>
+              </div>
+
+              <div class="field">
+                <span class="label">
+                  <span>En el centro: emoji o tu logo</span>
+                  <button type="button" id="btn-clear-center" class="dl-secondary" style="font-size:.78rem;color:var(--ink-mute);text-decoration:underline" hidden>Quitar</button>
+                </span>
+                <div class="emoji-grid" id="emoji-grid" role="group" aria-label="Emoji central"></div>
+                <div style="margin-top:.6rem">
+                  <label class="btn btn--ghost" style="width:100%;cursor:pointer">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    Subir mi logo (PNG, JPG o SVG)
+                    <input type="file" id="in-logo" accept="image/*" hidden>
+                  </label>
+                </div>
+                <p class="hint">En el objeto impreso el logo sale como silueta en relieve, del color del código.</p>
+              </div>
+            </div>
+
+            <!-- 3. Objeto 3D -->
+            <div class="panel">
+              <h2 class="panel-title"><span class="num">3</span> El objeto para imprimir</h2>
+
+              <div class="field">
+                <span class="label">Formato</span>
+                <div class="chips" id="format-chips" role="group" aria-label="Formato del objeto">
+                  <button type="button" class="chip" data-format="soporte" aria-pressed="false">Soporte de mesa</button>
+                  <button type="button" class="chip" data-format="llavero" aria-pressed="false">Llavero</button>
+                  <button type="button" class="chip" data-format="placa" aria-pressed="true">Placa de pared</button>
+                </div>
+                <p class="hint" id="format-hint">Se imprime sin soportes: la cara del código mira hacia arriba.</p>
+              </div>
+
+              <label class="field">
+                <span class="label"><span>Tamaño</span><b id="size-value" style="color:var(--ink)">95 mm</b></span>
+                <input class="slider" type="range" id="in-size" min="60" max="160" step="1" value="95">
+              </label>
+
+              <label class="field">
+                <span class="label">Texto en relieve (opcional)</span>
+                <input class="input" type="text" id="in-text" maxlength="22" value="SÍGUENOS EN TIKTOK" placeholder="Nombre de tu negocio" autocomplete="off">
+                <p class="hint">Máximo 22 caracteres. Se imprime en el color del código, igual que el QR.</p>
+              </label>
+
+              <label class="field">
+                <span class="label"><span>Altura del relieve</span><b id="relief-value" style="color:var(--ink)">1,2 mm</b></span>
+                <input class="slider" type="range" id="in-relief" min="0.8" max="2" step="0.1" value="1.2">
+              </label>
+            </div>
+          </div>
+
+          <!-- ---------------- COLUMNA DE VISTA PREVIA ---------------- -->
+          <div class="tool-preview">
+
+            <div class="stage-block">
+              <div class="stage-label"><span>Imagen del código</span><span id="qr-modules"></span></div>
+              <div class="qr-stage" id="qr-stage" aria-live="polite">
+                <p class="hint" id="qr-placeholder">Preparando el código...</p>
+              </div>
+              <div class="dl-row">
+                <button type="button" class="btn btn--ghost" id="btn-png">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  PNG
+                </button>
+                <button type="button" class="btn btn--ghost" id="btn-svg">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  SVG
+                </button>
+              </div>
+            </div>
+
+            <div class="stage-block">
+              <div class="stage-label"><span>Objeto 3D (los mismos dos colores)</span><span id="obj-size"></span></div>
+              <div class="viewer-3d" id="viewer">
+                <div class="viewer-msg" id="viewer-msg">
+                  <span class="spinner" aria-hidden="true"></span>
+                  <span id="viewer-msg-text">Preparando la vista 3D...</span>
+                </div>
+                <span class="viewer-hint">Arrastra para girar · rueda para acercar</span>
+              </div>
+
+              <div class="specs" id="specs" aria-live="polite"></div>
+              <div class="checks" id="checks" aria-live="polite"></div>
+
+              <div style="margin-top:.9rem">
+                <button type="button" class="btn btn--primary btn--big" id="btn-3mf">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                  <span id="btn-3mf-label">Descargar 3MF con los dos colores</span>
+                </button>
+                <div class="dl-secondary">
+                  <button type="button" id="btn-stl">o descargar STL para impresoras antiguas (.zip)</button>
+                </div>
+              </div>
+
+              <p class="privacy-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                100 % privado: tu enlace y tus archivos se generan en tu dispositivo y no se suben a ningún servidor.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ad-slot ad-slot--leaderboard">
+        <span class="ad-tag" aria-hidden="true">ANUNCIO</span>
+        <span class="ad-size" aria-hidden="true">Banner horizontal 728 x 90</span>
+        <!-- TU ANUNCIO AQUI. En AdSense: Anuncios > Por bloque de anuncios > crear bloque,
+             copia su data-ad-slot, borra los dos <span> de arriba y quita estos comentarios:
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1968948020574146"
+             data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="guia">
+    <div class="wrap wrap--narrow prose">
+      <div class="section-head">
+        <span class="eyebrow">Gu&iacute;a</span>
+        <h2>De tu perfil a una placa colgada en la pared</h2>
+      </div>
+      <h3>Tu dirección de perfil</h3>
+      <p>En TikTok la arroba <strong>sí forma parte</strong> de la dirección, a diferencia de Instagram. Queda así: <code>https://tiktok.com/@tunegocio</code>. Si te la dejas, el enlace no lleva a ningún sitio, así que cópiala del navegador en vez de escribirla a mano.</p>
+      <h3>Por qué una placa y no un soporte de mesa</h3>
+      <p>El QR de TikTok suele funcionar mejor colgado que apoyado: en la pared del local, en el escaparate, detrás de la barra o en el panel de un puesto de feria. Es un código que la gente escanea de pie y de paso, no sentada. Por eso esta página viene con el formato de placa ya elegido, con sus dos agujeros para colgarla.</p>
+      <p>Si prefieres tenerlo en el mostrador, cambia el formato a soporte de mesa en la propia herramienta: el código es el mismo.</p>
+      <h3>Al perfil, no a un vídeo</h3>
+      <p>Es tentador apuntar al vídeo que se hizo viral, pero es mala idea por dos motivos: el enlace de un vídeo es largo y hace el código más denso, y ese vídeo dejará de ser el importante dentro de un mes mientras la placa sigue en la pared. Al perfil siempre.</p>
+      <h3>Si cambias de usuario, el código muere</h3>
+      <p>La dirección incluye tu nombre de usuario. Si lo cambias, todas las piezas impresas dejan de llevar a ningún sitio. Es algo a tener en cuenta antes de imprimir varias unidades, sobre todo si tu cuenta es reciente y aún estás decidiendo el nombre.</p>
+      <h3>Combínalo con lo demás</h3>
+      <p>Muchos negocios cuelgan dos o tres placas juntas: una para TikTok, otra para Instagram y otra para el wifi. Si haces eso, ponles el mismo tamaño y los mismos dos colores para que se vean como un conjunto y no como tres cosas sueltas.</p>
+
+      <!-- HUECO DE ANUNCIO: bloque en mitad del contenido -->
+      <div class="ad-slot ad-slot--incontent">
+        <span class="ad-tag" aria-hidden="true">ANUNCIO</span>
+        <span class="ad-size" aria-hidden="true">Rectángulo 336 x 280</span>
+        <!-- TU ANUNCIO AQUI. En AdSense: Anuncios > Por bloque de anuncios > crear bloque,
+             copia su data-ad-slot, borra los dos <span> de arriba y quita estos comentarios:
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1968948020574146"
+             data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" style="background:var(--surface-2)">
+    <div class="wrap wrap--narrow">
+      <div class="section-head">
+        <span class="eyebrow">Dudas</span>
+        <h2>Preguntas frecuentes</h2>
+      </div>
+      <div class="faq">
+        <details class="acc"><summary>¿Tengo que incluir la arroba en la dirección?</summary>
+          <div><p>Sí. En TikTok la dirección del perfil lleva la arroba dentro: tiktok.com/@tuusuario. Sin ella el enlace no funciona. Lo más seguro es copiarla desde el navegador.</p></div>
+        </details>
+        <details class="acc"><summary>¿Funciona si quien escanea no tiene TikTok?</summary>
+          <div><p>Sí, se abre el perfil en el navegador. Si tiene la aplicación instalada, normalmente se abre directamente en ella.</p></div>
+        </details>
+        <details class="acc"><summary>¿Puedo usar el código que genera TikTok dentro de la app?</summary>
+          <div><p>Para compartir entre teléfonos sirve. Para imprimir no: es una imagen fija con los colores de la aplicación y no se puede convertir en una pieza con relieve y tus colores.</p></div>
+        </details>
+        <details class="acc"><summary>¿Mejor apuntar a un vídeo concreto?</summary>
+          <div><p>No lo recomendamos. El enlace es largo, el código sale más denso y el vídeo se queda desactualizado mientras la placa sigue colgada.</p></div>
+        </details>
+        <details class="acc"><summary>¿De qué tamaño hago la placa?</summary>
+          <div><p>Entre 90 y 110 mm si va en una pared y la gente la escanea desde medio metro o menos. Si va más alta o más lejos, agranda la pieza.</p></div>
+        </details>
+        <details class="acc"><summary>¿Cómo la cuelgo?</summary>
+          <div><p>Trae dos agujeros arriba para tornillos o alcayatas. Para una pared lisa o un escaparate también aguanta con cinta de doble cara, porque la pieza pesa muy poco.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- P:MORE:START -->
+  <section class="section" id="mas-herramientas" style="background:var(--surface-2)">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">M&aacute;s herramientas</span>
+        <h2>Otros c&oacute;digos QR listos para imprimir</h2>
+        <p class="lead">La misma herramienta, preparada para cada caso.</p>
+      </div>
+      <div class="uses">
+        <a class="use" href="index.html">
+          <span class="ico" aria-hidden="true">&#128736;&#65039;</span>
+          <div><h3>El generador completo</h3><p>Los tres formatos, todos los estilos y la guía de impresión.</p></div>
+        </a>
+        <a class="use" href="qr-wifi.html">
+          <span class="ico" aria-hidden="true">&#128246;</span>
+          <div><h3>QR de wifi</h3><p>El código de tu red en una placa, para apartamentos y locales.</p></div>
+        </a>
+        <a class="use" href="qr-resenas-google.html">
+          <span class="ico" aria-hidden="true">&#11088;</span>
+          <div><h3>QR para reseñas de Google</h3><p>Soporte de mesa que lleva directo a valorar tu negocio.</p></div>
+        </a>
+        <a class="use" href="qr-llavero.html">
+          <span class="ico" aria-hidden="true">&#128273;</span>
+          <div><h3>Llavero con QR</h3><p>Con su agujero para la anilla, para eventos y mascotas.</p></div>
+        </a>
+        <a class="use" href="qr-carta-restaurante.html">
+          <span class="ico" aria-hidden="true">&#127869;&#65039;</span>
+          <div><h3>QR para la carta</h3><p>Soporte de mesa con el enlace a tu carta digital.</p></div>
+        </a>
+        <a class="use" href="qr-whatsapp.html">
+          <span class="ico" aria-hidden="true">&#128172;</span>
+          <div><h3>QR para WhatsApp</h3><p>Abre el chat contigo sin guardar tu numero.</p></div>
+        </a>
+        <a class="use" href="qr-instagram.html">
+          <span class="ico" aria-hidden="true">&#128248;</span>
+          <div><h3>QR para Instagram</h3><p>Tu perfil en el mostrador, para que te sigan al momento.</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- P:MORE:END -->
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>QR3D</h4>
+        <p>Generador gratuito de códigos QR para imprimir en 3D. Todo se genera en tu navegador: ni registro, ni servidores, ni marcas de agua.</p>
+      </div>
+      <div>
+        <h4>Herramientas</h4>
+<!-- P:FOOTERTOOLS:START -->
+        <ul>
+          <li><a href="index.html">Generador completo</a></li>
+          <li><a href="qr-wifi.html">QR de wifi</a></li>
+          <li><a href="qr-resenas-google.html">QR para reseñas de Google</a></li>
+          <li><a href="qr-llavero.html">Llavero con QR</a></li>
+          <li><a href="qr-carta-restaurante.html">QR para la carta</a></li>
+          <li><a href="qr-whatsapp.html">QR para WhatsApp</a></li>
+          <li><a href="qr-instagram.html">QR para Instagram</a></li>
+          <li><a href="qr-tiktok.html">QR para TikTok</a></li>
+        </ul>
+  <!-- P:FOOTERTOOLS:END -->
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacidad.html">Privacidad</a></li>
+          <li><a href="aviso-legal.html">Aviso legal</a></li>
+          <li><a href="privacidad.html#cookies">Cookies</a></li>
+          <li><a href="mailto:juliangaviria29@gmail.com">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 QR3D &middot; Julián Antonio Gaviria Jiménez. QR Code es una marca registrada de DENSO WAVE INCORPORATED.</span>
+      <span>Hecho para makers y para negocios con prisa.</span>
+    </div>
+  </div>
+</footer>
+
+<dialog class="ad-modal" id="ad-modal" aria-labelledby="ad-modal-title">
+  <div class="ad-modal-head">
+    <strong id="ad-modal-title">ANUNCIO</strong>
+    <button type="button" class="ad-close" id="ad-modal-close" aria-label="Cerrar anuncio">&times;</button>
+  </div>
+  <div class="ad-modal-body">
+    <p class="ad-modal-note" id="ad-modal-note">Tu descarga ya ha empezado.</p>
+    <div class="ad-slot ad-slot--modal">
+      <span class="ad-tag" aria-hidden="true">ANUNCIO</span>
+      <span class="ad-size" aria-hidden="true">Rectángulo 300 x 250</span>
+      <!-- TU ANUNCIO AQUI. En AdSense: Anuncios > Por bloque de anuncios > crear bloque,
+           copia su data-ad-slot, borra los dos <span> de arriba y quita estos comentarios:
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1968948020574146"
+           data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      -->
+    </div>
+  </div>
+  <div class="ad-modal-foot">
+    <button type="button" class="btn btn--dark" style="width:100%" id="ad-modal-continue">Cerrar y seguir</button>
+  </div>
+</dialog>
+
+<!-- HUECO DE ANUNCIO: notificación pequeña en la esquina -->
+<aside class="ad-toast" id="ad-toast" aria-label="Anuncio en la esquina">
+  <div class="ad-toast-head">
+    <strong>ANUNCIO</strong>
+    <button type="button" class="ad-close" id="ad-toast-close" aria-label="Cerrar anuncio" style="width:26px;height:26px;font-size:1rem">&times;</button>
+  </div>
+  <div class="ad-slot">
+    <span class="ad-tag" aria-hidden="true">ANUNCIO</span>
+    <span class="ad-size" aria-hidden="true">250 x 100</span>
+    <!-- TU ANUNCIO AQUI. En AdSense: Anuncios > Por bloque de anuncios > crear bloque,
+         copia su data-ad-slot, borra los dos <span> de arriba y quita estos comentarios:
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1968948020574146"
+         data-ad-slot="XXXXXXXXXX" data-ad-format="horizontal"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </div>
+</aside>
+
+<script defer src="lib/vendor/qr-code-styling.js"></script>
+<script defer src="lib/vendor/jszip.min.js"></script>
+<script defer src="lib/manifest.js?v=20260819"></script>
+<script defer src="qr3d.js?v=20260819"></script>
+<script defer src="main.js?v=20260819"></script>
+</body>
+</html>

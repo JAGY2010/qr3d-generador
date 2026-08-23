@@ -328,6 +328,194 @@ PAGES = [
              "antes de imprimir todas las mesas."),
         ],
     },
+    {
+        "slug": "qr-whatsapp.html",
+        "title": "QR para WhatsApp en 3D | QR3D",
+        "desc": "Genera el codigo QR que abre un chat de WhatsApp contigo, sin que nadie tenga que "
+                "guardar tu numero, y descargalo listo para imprimir en 3D a dos colores.",
+        "eyebrow": "WhatsApp &middot; chat directo",
+        "h1": 'Generador de <em>QR para WhatsApp</em> para imprimir en 3D',
+        "lead": "Pon tu número y llévate un soporte listo para imprimir. Quien lo escanee abre el "
+                "chat contigo directamente, sin guardar el contacto ni teclear el número.",
+        "preset": {"mode": "link", "format": "soporte", "size": 78,
+                   "text": "ESCRÍBENOS", "data": "https://wa.me/573001234567"},
+        "prose_title": "Cómo se arma el enlace de WhatsApp",
+        "prose": [
+            ("p", "Esto no es un código con tu número dentro: es un enlace especial de WhatsApp que "
+                  "abre la conversación contigo. La diferencia importa, porque un código que solo "
+                  "contenga el número obliga a la otra persona a guardarte como contacto antes de "
+                  "escribirte, y ahí se pierde a la mitad de la gente."),
+            ("h3", "El formato del número"),
+            ("p", "El enlace es <code>wa.me/</code> seguido de tu número <strong>con el código de "
+                  "país y sin nada más</strong>: sin el signo +, sin espacios, sin guiones y sin el "
+                  "cero inicial que a veces se pone delante. Un móvil colombiano queda así:"),
+            ("ul", ["Número: 300 123 4567 &rarr; enlace: <code>https://wa.me/573001234567</code>",
+                    "Un número español 612 345 678 &rarr; <code>https://wa.me/34612345678</code>",
+                    "Un número mexicano 55 1234 5678 &rarr; <code>https://wa.me/525512345678</code>"]),
+            ("p", "Es el error más común: poner el número sin el código de país. El enlace parece "
+                  "correcto, el código se genera igual, y al escanearlo WhatsApp dice que el número no "
+                  "es válido. Pruébalo desde tu propio teléfono antes de imprimir."),
+            ("h3", "Dejar el mensaje ya escrito"),
+            ("p", "Puedes hacer que el chat se abra con un texto preparado, para que la persona solo "
+                  "tenga que darle a enviar. Se añade <code>?text=</code> al final: "
+                  "<code>https://wa.me/573001234567?text=Hola,%20quiero%20información</code> (los "
+                  "<code>%20</code> son los espacios)."),
+            ("p", "Es cómodo, pero tiene un precio: alarga el enlace y eso hace el código más denso, con "
+                  "los cuadritos más pequeños. Si lo usas, deja el mensaje corto y comprueba que el aviso "
+                  "de la herramienta sigue en verde."),
+            ("h3", "Dónde funciona mejor"),
+            ("p", "En el mostrador de una tienda, en el escaparate para cuando está cerrado, en la puerta "
+                  "de un taller, en una furgoneta de reparto o en una tarjeta que entregas. En todos esos "
+                  "sitios la alternativa es que la persona apunte un número en el teléfono, y casi nadie "
+                  "lo hace."),
+            ("p", "Un consejo que no es técnico: si pones el código, contesta. Un QR de WhatsApp en la "
+                  "puerta que nadie responde deja peor impresión que no tenerlo."),
+        ],
+        "faq": [
+            ("¿Tiene que guardar mi número la otra persona?",
+             "No, y esa es toda la gracia. El enlace abre la conversación contigo directamente aunque no "
+             "te tenga en la agenda. Por eso funciona mucho mejor que imprimir el número a secas."),
+            ("¿Funciona con WhatsApp Business?",
+             "Sí, exactamente igual. El enlace apunta al número, y da lo mismo que ese número tenga la "
+             "aplicación normal o la de empresa."),
+            ("¿Cómo escribo mi número exactamente?",
+             "Código de país y número seguidos, sin el +, sin espacios, sin guiones y sin ceros delante. "
+             "Para Colombia el código es 57, para España 34 y para México 52."),
+            ("¿Puedo dejar un mensaje ya escrito?",
+             "Sí, añadiendo ?text= al final del enlace. Ten en cuenta que alarga el código: cuanto más "
+             "largo el mensaje, más pequeños quedan los cuadritos al imprimir."),
+            ("¿Y si cambio de número?",
+             "El código deja de servir y hay que imprimir otro, porque el número va grabado dentro. Si tu "
+             "número no es estable, es mejor apuntar el QR a una página tuya que redirija a WhatsApp: así "
+             "cambias el destino sin reimprimir."),
+            ("¿Sirve para un grupo de WhatsApp?",
+             "No con este tipo de enlace. Los grupos usan un enlace de invitación distinto, que puedes "
+             "generar desde el propio grupo y pegar aquí como cualquier otro enlace."),
+            ("¿Funciona si la persona no tiene WhatsApp?",
+             "Le abrirá la página de WhatsApp en el navegador invitándole a instalarlo. No es un error del "
+             "código, simplemente esa persona no puede escribirte por ahí."),
+        ],
+    },
+    {
+        "slug": "qr-instagram.html",
+        "title": "QR para Instagram en 3D | QR3D",
+        "desc": "Crea el codigo QR de tu perfil de Instagram y descargalo listo para imprimir en 3D, "
+                "en un soporte de mostrador a dos colores. Gratis y sin registro.",
+        "eyebrow": "Instagram &middot; para el mostrador",
+        "h1": 'Generador de <em>QR para Instagram</em> para imprimir en 3D',
+        "lead": "Pega la dirección de tu perfil y llévate un soporte listo para imprimir. "
+                "Un escaneo y te siguen, sin que nadie tenga que buscar tu nombre entre veinte parecidos.",
+        "preset": {"mode": "link", "format": "soporte", "size": 78,
+                   "text": "SÍGUENOS", "data": "https://instagram.com/tunegocio"},
+        "prose_title": "Lo que hay que saber antes de imprimirlo",
+        "prose": [
+            ("h3", "Tu dirección de perfil"),
+            ("p", "Es <code>instagram.com/</code> seguido de tu nombre de usuario, sin la arroba. Si tu "
+                  "usuario es <em>@tunegocio</em>, el enlace es <code>https://instagram.com/tunegocio</code>. "
+                  "Lo puedes copiar desde el navegador entrando en tu perfil."),
+            ("h3", "¿Y el código que genera la propia app?"),
+            ("p", "Instagram tiene su propio código dentro de la aplicación, y para compartir el perfil "
+                  "de un teléfono a otro va bien. Pero es una imagen pensada para pantallas: no puedes "
+                  "cambiarle los colores para que combinen con tu local, ni convertirla en una pieza "
+                  "física con relieve."),
+            ("p", "El código que genera esta herramienta lleva una dirección web normal, así que lo "
+                  "abre la cámara de cualquier teléfono y lleva a tu perfil aunque la persona no tenga "
+                  "cuenta de Instagram. Y sale como objeto impreso, con tus dos colores."),
+            ("h3", "El aviso importante: no cambies de usuario"),
+            ("p", "Si algún día cambias tu nombre de usuario, la dirección cambia con él y todos los "
+                  "códigos impresos dejan de funcionar. Antes de imprimir una tanda, asegúrate de que el "
+                  "usuario es el definitivo. Y si sospechas que lo cambiarás, apunta el QR a una página "
+                  "tuya que redirija a Instagram: entonces podrás cambiar el destino cuando quieras."),
+            ("h3", "¿Al perfil o a una publicación?"),
+            ("p", "Casi siempre al perfil. El enlace de una publicación concreta es mucho más largo, lo "
+                  "que hace el código más denso y difícil de imprimir, y además esa publicación acaba "
+                  "quedando vieja mientras la pieza sigue en el mostrador."),
+            ("h3", "Dónde ponerlo"),
+            ("p", "En el mostrador de la tienda, en el puesto del mercado, en el estudio, junto a la caja "
+                  "o en el escaparate mirando hacia fuera. La regla es sencilla: donde la gente ya está "
+                  "parada y con el teléfono a mano."),
+        ],
+        "faq": [
+            ("¿Funciona si la persona no tiene Instagram?",
+             "Sí. Como el código lleva una dirección web normal, se abre en el navegador y muestra tu "
+             "perfil igualmente. Si tiene la aplicación instalada, se abrirá directamente en ella."),
+            ("¿Puedo usar el código que genera Instagram en la app?",
+             "Para compartir de un teléfono a otro sirve. Para imprimir no tanto: es una imagen fija, no "
+             "puedes elegir sus colores ni convertirla en un objeto con relieve. Esta herramienta hace un "
+             "código propio con la dirección de tu perfil."),
+            ("¿Y si cambio mi nombre de usuario?",
+             "Los códigos ya impresos dejan de funcionar, porque la dirección incluye el usuario. Es la "
+             "razón principal para no imprimir una tanda grande justo antes de un cambio de marca."),
+            ("¿Puedo apuntar a una publicación concreta?",
+             "Sí, pegando su enlace, pero no suele compensar: el enlace es largo, el código sale más denso "
+             "y la publicación envejece mientras la pieza sigue puesta."),
+            ("¿Qué tamaño va bien para un mostrador?",
+             "Entre 70 y 85 mm. A esa medida se escanea de pie desde el otro lado del mostrador sin que "
+             "nadie tenga que agacharse."),
+            ("¿Puedo poner mi logotipo en el centro?",
+             "Sí. En la imagen sale a color y en la pieza impresa se convierte en una silueta en relieve. "
+             "Escanéalo una vez antes de imprimir varios, porque el logo tapa parte del código."),
+        ],
+    },
+    {
+        "slug": "qr-tiktok.html",
+        "title": "QR para TikTok en 3D | QR3D",
+        "desc": "Genera el codigo QR de tu perfil de TikTok y descargalo listo para imprimir en 3D, "
+                "en una placa a dos colores para colgar en tu local o tu puesto.",
+        "eyebrow": "TikTok &middot; placa para colgar",
+        "h1": 'Generador de <em>QR para TikTok</em> para imprimir en 3D',
+        "lead": "Pega la dirección de tu perfil y llévate una placa lista para imprimir y colgar. "
+                "Quien la escanee llega a tus vídeos sin buscarte a mano.",
+        "preset": {"mode": "link", "format": "placa", "size": 95,
+                   "text": "SÍGUENOS EN TIKTOK", "data": "https://tiktok.com/@tunegocio"},
+        "prose_title": "De tu perfil a una placa colgada en la pared",
+        "prose": [
+            ("h3", "Tu dirección de perfil"),
+            ("p", "En TikTok la arroba <strong>sí forma parte</strong> de la dirección, a diferencia de "
+                  "Instagram. Queda así: <code>https://tiktok.com/@tunegocio</code>. Si te la dejas, el "
+                  "enlace no lleva a ningún sitio, así que cópiala del navegador en vez de escribirla a "
+                  "mano."),
+            ("h3", "Por qué una placa y no un soporte de mesa"),
+            ("p", "El QR de TikTok suele funcionar mejor colgado que apoyado: en la pared del local, en el "
+                  "escaparate, detrás de la barra o en el panel de un puesto de feria. Es un código que la "
+                  "gente escanea de pie y de paso, no sentada. Por eso esta página viene con el formato de "
+                  "placa ya elegido, con sus dos agujeros para colgarla."),
+            ("p", "Si prefieres tenerlo en el mostrador, cambia el formato a soporte de mesa en la propia "
+                  "herramienta: el código es el mismo."),
+            ("h3", "Al perfil, no a un vídeo"),
+            ("p", "Es tentador apuntar al vídeo que se hizo viral, pero es mala idea por dos motivos: el "
+                  "enlace de un vídeo es largo y hace el código más denso, y ese vídeo dejará de ser el "
+                  "importante dentro de un mes mientras la placa sigue en la pared. Al perfil siempre."),
+            ("h3", "Si cambias de usuario, el código muere"),
+            ("p", "La dirección incluye tu nombre de usuario. Si lo cambias, todas las piezas impresas "
+                  "dejan de llevar a ningún sitio. Es algo a tener en cuenta antes de imprimir varias "
+                  "unidades, sobre todo si tu cuenta es reciente y aún estás decidiendo el nombre."),
+            ("h3", "Combínalo con lo demás"),
+            ("p", "Muchos negocios cuelgan dos o tres placas juntas: una para TikTok, otra para Instagram "
+                  "y otra para el wifi. Si haces eso, ponles el mismo tamaño y los mismos dos colores para "
+                  "que se vean como un conjunto y no como tres cosas sueltas."),
+        ],
+        "faq": [
+            ("¿Tengo que incluir la arroba en la dirección?",
+             "Sí. En TikTok la dirección del perfil lleva la arroba dentro: tiktok.com/@tuusuario. Sin "
+             "ella el enlace no funciona. Lo más seguro es copiarla desde el navegador."),
+            ("¿Funciona si quien escanea no tiene TikTok?",
+             "Sí, se abre el perfil en el navegador. Si tiene la aplicación instalada, normalmente se abre "
+             "directamente en ella."),
+            ("¿Puedo usar el código que genera TikTok dentro de la app?",
+             "Para compartir entre teléfonos sirve. Para imprimir no: es una imagen fija con los colores "
+             "de la aplicación y no se puede convertir en una pieza con relieve y tus colores."),
+            ("¿Mejor apuntar a un vídeo concreto?",
+             "No lo recomendamos. El enlace es largo, el código sale más denso y el vídeo se queda "
+             "desactualizado mientras la placa sigue colgada."),
+            ("¿De qué tamaño hago la placa?",
+             "Entre 90 y 110 mm si va en una pared y la gente la escanea desde medio metro o menos. Si va "
+             "más alta o más lejos, agranda la pieza."),
+            ("¿Cómo la cuelgo?",
+             "Trae dos agujeros arriba para tornillos o alcayatas. Para una pared lisa o un escaparate "
+             "también aguanta con cinta de doble cara, porque la pieza pesa muy poco."),
+        ],
+    },
 ]
 
 HOME = {"slug": "index.html", "nav": "El generador completo",
@@ -337,12 +525,18 @@ NAV_DESC = {
     "qr-resenas-google.html": "Soporte de mesa que lleva directo a valorar tu negocio.",
     "qr-llavero.html": "Con su agujero para la anilla, para eventos y mascotas.",
     "qr-carta-restaurante.html": "Soporte de mesa con el enlace a tu carta digital.",
+    "qr-whatsapp.html": "Abre el chat contigo sin guardar tu numero.",
+    "qr-instagram.html": "Tu perfil en el mostrador, para que te sigan al momento.",
+    "qr-tiktok.html": "Placa para colgar con el enlace a tus videos.",
 }
 NAV_LABEL = {
     "qr-wifi.html": "QR de wifi",
     "qr-resenas-google.html": "QR para reseñas de Google",
     "qr-llavero.html": "Llavero con QR",
     "qr-carta-restaurante.html": "QR para la carta",
+    "qr-whatsapp.html": "QR para WhatsApp",
+    "qr-instagram.html": "QR para Instagram",
+    "qr-tiktok.html": "QR para TikTok",
 }
 NAV_ICON = {
     "index.html": "&#128736;&#65039;",
@@ -350,6 +544,9 @@ NAV_ICON = {
     "qr-resenas-google.html": "&#11088;",
     "qr-llavero.html": "&#128273;",
     "qr-carta-restaurante.html": "&#127869;&#65039;",
+    "qr-whatsapp.html": "&#128172;",
+    "qr-instagram.html": "&#128248;",
+    "qr-tiktok.html": "&#127925;",
 }
 
 
@@ -418,6 +615,17 @@ def more_tools(current):
         '  </section>')
 
 
+def footer_tools():
+    """Lista de herramientas del pie: se genera con TODAS las paginas, para que
+    anadir una nueva no deje el pie desactualizado."""
+    rows = ['        <ul>',
+            '          <li><a href="index.html">Generador completo</a></li>']
+    for p in PAGES:
+        rows.append('          <li><a href="%s">%s</a></li>' % (p["slug"], NAV_LABEL[p["slug"]]))
+    rows.append('        </ul>')
+    return "\n".join(rows)
+
+
 def prose_html(items):
     out = []
     for kind, val in items:
@@ -483,6 +691,8 @@ def build():
     header = parts["HEADER"]
     for anchor in ("#como-funciona", "#ideas"):
         header = header.replace('href="%s"' % anchor, 'href="index.html%s"' % anchor)
+
+    footer = replace_block(parts["FOOTER"], "FOOTERTOOLS", footer_tools())
 
     for page in PAGES:
         tool = apply_preset(parts["TOOL"], page["preset"])
@@ -580,12 +790,13 @@ def build():
            prose_title=page["prose_title"], prose=prose_html(page["prose"]),
            adincontent=parts["ADINCONTENT"],
            faq=faq_html(page["faq"]), more=more_tools(page["slug"]),
-           footer=parts["FOOTER"], overlays=parts["OVERLAYS"], scripts=parts["SCRIPTS"])
+           footer=footer, overlays=parts["OVERLAYS"], scripts=parts["SCRIPTS"])
         write(page["slug"], html)
         print("  [OK] %s" % page["slug"])
 
     # la portada tambien enlaza a las nuevas paginas
     src = replace_block(src, "MORE", more_tools("index.html"))
+    src = replace_block(src, "FOOTERTOOLS", footer_tools())
     write("index.html", src)
     print("  [OK] index.html (bloque de mas herramientas)")
 
