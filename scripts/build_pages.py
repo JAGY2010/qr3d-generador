@@ -250,6 +250,84 @@ PAGES = [
              "justo lo que se necesita."),
         ],
     },
+    {
+        "slug": "qr-carta-restaurante.html",
+        "title": "QR para la carta de restaurante en 3D | QR3D",
+        "desc": "Crea el codigo QR de tu carta digital y descargalo listo para imprimir en 3D: "
+                "un soporte de mesa a dos colores que aguanta el servicio. Gratis y sin registro.",
+        "eyebrow": "Carta digital &middot; soporte de mesa",
+        "h1": 'Generador de <em>QR para la carta</em> de tu restaurante',
+        "lead": "Pega el enlace de tu carta y llévate un soporte de mesa listo para imprimir. "
+                "Se limpia con un paño, no se moja y no hay que reponerlo cada semana.",
+        "preset": {"mode": "link", "format": "soporte", "size": 82,
+                   "text": "NUESTRA CARTA",
+                   "data": "https://turestaurante.com/carta"},
+        "prose_title": "Cómo montar la carta digital sin equivocarte",
+        "prose": [
+            ("h3", "Lo primero: a dónde debe llevar el código"),
+            ("p", "Aquí es donde se decide si esto funciona o molesta. El código puede apuntar a "
+                  "cualquier dirección, pero no todas dan la misma experiencia al cliente que está "
+                  "sentado en tu mesa con hambre."),
+            ("ul", ["<strong>Una página web con la carta:</strong> es la mejor opción. Se lee de un vistazo, "
+                    "se puede ampliar y funciona igual en cualquier teléfono.",
+                    "<strong>Un PDF:</strong> funciona, pero es incómodo. El cliente tiene que ampliar y "
+                    "arrastrar para leer los precios, y en algunos teléfonos se descarga en vez de abrirse.",
+                    "<strong>Una foto de la carta en papel:</strong> lo peor. Si no se lee bien en la pantalla, "
+                    "has cambiado un papel legible por una imagen borrosa."]),
+            ("h3", "El truco que te ahorra reimprimir cada temporada"),
+            ("p", "Apunta el código a <strong>una dirección que tú controles</strong>, no directamente al "
+                  "archivo. Si el QR lleva a <code>turestaurante.com/carta</code> y esa página muestra la "
+                  "carta de cada momento, puedes cambiar los platos y los precios mil veces sin tocar los "
+                  "soportes. Si en cambio el código apunta al archivo concreto de la carta de primavera, "
+                  "cuando cambies de carta tendrás que imprimirlo todo otra vez."),
+            ("p", "Es el error más caro y el más fácil de evitar: se decide en un minuto, antes de generar "
+                  "el código."),
+            ("h3", "Cuántos soportes hacen falta"),
+            ("p", "Uno por mesa. Suena a mucho, pero es justo lo contrario de lo que la gente hace: poner "
+                  "dos o tres en la barra y esperar que el cliente se levante. Nadie se levanta. A 4 o 5 "
+                  "gramos de filamento por pieza, veinte mesas salen por menos de lo que cuesta plastificar "
+                  "dos cartas."),
+            ("h3", "Aguante y limpieza"),
+            ("p", "El PLA aguanta perfectamente el uso de mesa y se limpia con un paño húmedo o con "
+                  "desinfectante. Lo único que no soporta es el calor fuerte: no lo dejes al sol directo "
+                  "en una terraza de verano ni encima de una plancha, porque el PLA empieza a deformarse "
+                  "alrededor de los 60 °C. Para terrazas, PETG."),
+            ("h3", "Ponle también un plan B"),
+            ("p", "Habrá clientes que no sepan o no quieran escanear: gente mayor, teléfonos sin batería, "
+                  "turistas sin datos. Ten dos o tres cartas en papel detrás de la barra. El QR es para "
+                  "la mayoría, no para obligar a nadie."),
+        ],
+        "faq": [
+            ("¿Necesito una página web para poner la carta?",
+             "No hace falta una web completa. Vale cualquier dirección que muestre tu carta y que puedas "
+             "actualizar: una página sencilla, un documento compartido o una de las plataformas de cartas "
+             "digitales. Lo importante es que la dirección no cambie cuando cambies los platos."),
+            ("¿Puedo cambiar la carta sin volver a imprimir los soportes?",
+             "Sí, y es la gran ventaja frente al papel: si el código apunta a una dirección tuya, cambias "
+             "lo que hay detrás y todos los soportes de todas las mesas quedan actualizados al instante. "
+             "Por eso conviene apuntar a una página fija y no a un archivo concreto."),
+            ("¿Qué tamaño de soporte funciona mejor en una mesa?",
+             "Entre 75 y 90 mm de ancho. A esa medida se escanea sin acercarse desde la posición normal "
+             "de alguien sentado, y la pieza no ocupa media mesa."),
+            ("¿Se puede limpiar con desinfectante?",
+             "Sí, sin problema. Es plástico liso: un paño con desinfectante y listo. Es una de las razones "
+             "por las que compensa frente a la carta de papel plastificado, que se raya y se despega."),
+            ("¿Aguanta en una terraza al sol?",
+             "El PLA no: por encima de unos 60 °C empieza a ablandarse, y un salpicadero o una mesa al sol "
+             "de agosto llegan ahí. Para exterior imprime en PETG, que aguanta bastante más calor."),
+            ("¿Necesito dar wifi a los clientes?",
+             "No es obligatorio, pero ayuda: si tu local tiene mala cobertura, un cliente sin datos no "
+             "podrá abrir la carta. Muchos restaurantes ponen los dos códigos juntos, el de la wifi y el de "
+             "la carta, en el mismo soporte o en dos piezas al lado."),
+            ("¿Y si un cliente no sabe escanear el código?",
+             "Ten siempre dos o tres cartas en papel a mano. El código digital es para agilizar a la mayoría, "
+             "no para dejar fuera a quien no se maneja con el teléfono."),
+            ("¿Puedo poner el logotipo de mi restaurante en el centro?",
+             "Sí. Súbelo en la herramienta y aparecerá en la imagen tal cual; en la pieza impresa se "
+             "convierte en una silueta en relieve del color del código. Prueba a escanear el resultado "
+             "antes de imprimir todas las mesas."),
+        ],
+    },
 ]
 
 HOME = {"slug": "index.html", "nav": "El generador completo",
@@ -258,17 +336,20 @@ NAV_DESC = {
     "qr-wifi.html": "El código de tu red en una placa, para apartamentos y locales.",
     "qr-resenas-google.html": "Soporte de mesa que lleva directo a valorar tu negocio.",
     "qr-llavero.html": "Con su agujero para la anilla, para eventos y mascotas.",
+    "qr-carta-restaurante.html": "Soporte de mesa con el enlace a tu carta digital.",
 }
 NAV_LABEL = {
     "qr-wifi.html": "QR de wifi",
     "qr-resenas-google.html": "QR para reseñas de Google",
     "qr-llavero.html": "Llavero con QR",
+    "qr-carta-restaurante.html": "QR para la carta",
 }
 NAV_ICON = {
     "index.html": "&#128736;&#65039;",
     "qr-wifi.html": "&#128246;",
     "qr-resenas-google.html": "&#11088;",
     "qr-llavero.html": "&#128273;",
+    "qr-carta-restaurante.html": "&#127869;&#65039;",
 }
 
 
