@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acerca de QR3D | Quién hay detrás y cómo funciona</title>
+<meta name="description" content="Qué es QR3D, por qué existe, cómo convierte un código QR en un objeto imprimible a dos colores y quién mantiene el proyecto.">
+<link rel="canonical" href="https://lexasylum.com/acerca.html">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#151b2b">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="QR3D">
+<meta property="og:title" content="Acerca de QR3D">
+<meta property="og:description" content="Por qué existe esta herramienta, cómo funciona por dentro y quién la mantiene.">
+<meta property="og:url" content="https://lexasylum.com/acerca.html">
+<meta property="og:image" content="https://lexasylum.com/assets/img/og-cover.png">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap">
+<link rel="stylesheet" href="styles.css?v=20260904">
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1968948020574146"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html"><span class="logo-mark" aria-hidden="true">QR</span><span>QR3D</span></a>
+    <nav class="nav-links" aria-label="Secciones">
+      <a href="index.html">La herramienta</a>
+      <a href="index.html#galeria">Galería</a>
+      <a href="index.html#guia">Guía de impresión</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="section">
+  <div class="wrap wrap--narrow prose">
+    <span class="eyebrow">El proyecto</span>
+    <h1 style="margin:.7rem 0 1rem">Acerca de QR3D</h1>
+    <p class="lead" style="margin-bottom:2rem">QR3D es una herramienta gratuita que convierte un enlace en un
+      objeto listo para imprimir en 3D, con los dos colores guardados dentro del archivo. No hay registro, no
+      hay cuentas y nada de lo que escribes sale de tu navegador.</p>
+
+    <h3>Por qué existe</h3>
+    <p>Hay cientos de generadores de códigos QR y casi todos hacen lo mismo: te dan una imagen. Y hay bastantes
+      modelos de piezas con QR para descargar, pero traen un código fijo que no es el tuyo.</p>
+    <p>En medio faltaba algo: poder poner <em>tu</em> enlace y llevarte directamente el objeto físico. Y sobre todo,
+      llevártelo <strong>con los dos colores ya asignados</strong>, porque un código QR impreso de un solo color
+      no lo lee ninguna cámara. Ese era el hueco que quería tapar esta herramienta.</p>
+
+    <h3>Cómo funciona por dentro</h3>
+    <p>Merece la pena explicarlo porque no es lo que la gente imagina.</p>
+    <p>Lo primero que hace la web es leer <strong>la cuadrícula real del código</strong> que acabas de generar:
+      cuántos cuadritos tiene de lado. Con ese dato calcula cuánto va a medir cada uno en milímetros según el
+      tamaño de pieza que elijas, y por eso puede avisarte antes de imprimir si van a salir demasiado pequeños.</p>
+    <p>Después dibuja otra vez el mismo código, con tu mismo estilo y tu mismo logo, pero en blanco y negro puro y
+      a mucha más resolución. Esa imagen es la que se convierte en relieve, y es la razón de que la pieza impresa
+      coincida exactamente con lo que ves en pantalla: si elegiste puntos redondos, salen puntos redondos; si
+      pusiste un emoji, sale su silueta. Muchas herramientas parecidas colocan cubos cuadrados y el resultado
+      impreso no se parece a la vista previa.</p>
+    <p>Como una imagen de ese tamaño tiene cientos de miles de puntos, antes de crear la geometría se agrupan en
+      el menor número posible de rectángulos. Es lo que hace que el archivo pese decenas de kilobytes en vez de
+      varios megas y que la vista 3D se mueva con soltura incluso en un teléfono.</p>
+    <p>Por último se escribe el archivo <strong>3MF</strong> a mano. Un 3MF es, por dentro, un comprimido con unos
+      cuantos documentos de texto que describen los vértices, los triángulos y los materiales. Aquí se generan dos
+      objetos separados —la base y el relieve—, cada uno con su color, para que tu programa de impresión los
+      reconozca sin que tengas que tocar nada.</p>
+
+    <h3>Todo ocurre en tu navegador</h3>
+    <p>No hay servidor que procese nada. El código, el modelo 3D y los archivos se construyen en tu propio
+      dispositivo con el procesador de tu equipo. Esto tiene tres consecuencias que a mí me parecen importantes:</p>
+    <ul>
+      <li><strong>Privacidad real, no prometida.</strong> Tus enlaces, tus contraseñas de wifi y tus logotipos no
+        se envían a ningún sitio porque no hay a dónde enviarlos.</li>
+      <li><strong>No hay límites de uso.</strong> Puedes generar mil piezas seguidas: no me cuesta nada, así que
+        no hay cuotas ni versiones de pago.</li>
+      <li><strong>Funciona igual de rápido siempre</strong>, porque no depende de que un servidor esté saturado.</li>
+    </ul>
+
+    <h3>Lo que esta herramienta no hace</h3>
+    <p>Prefiero decirlo claro antes de que pierdas el tiempo:</p>
+    <ul>
+      <li><strong>No hace códigos QR dinámicos.</strong> El destino queda grabado en la pieza para siempre. Si
+        necesitas cambiarlo después, apunta el código a una dirección tuya que puedas redirigir.</li>
+      <li><strong>No guarda tus diseños.</strong> Al cerrar la pestaña se pierde todo, porque no hay cuentas
+        de usuario.</li>
+      <li><strong>No imprime por ti.</strong> Te da el archivo; la impresora la pones tú o quien te haga el
+        trabajo.</li>
+      <li><strong>No garantiza que tu diseño se escanee.</strong> Te avisa cuando los números no cuadran, pero la
+        prueba definitiva es escanear la pieza con un teléfono antes de hacer una tanda.</li>
+    </ul>
+
+    <h3>Quién lo mantiene</h3>
+    <p>El proyecto lo lleva una sola persona: <strong>Julián Antonio Gaviria Jiménez</strong>, desde Isnos, en el
+      departamento del Huila (Colombia). No hay empresa detrás ni equipo: si escribes al correo, contesto yo.</p>
+
+    <h3>Cómo se sostiene</h3>
+    <p>La herramienta es gratis y no tiene versión de pago, marcas de agua ni límites. Los gastos del dominio y del
+      alojamiento se cubren con los espacios publicitarios de la web.</p>
+    <p>Por eso los anuncios están donde están: debajo de la herramienta y dentro del texto, nunca encima del
+      generador ni tapando los botones de descarga. Si alguna vez ves publicidad que estorba el uso, escríbeme y
+      la quito: prefiero ganar menos que tener una herramienta incómoda.</p>
+
+    <h3>Créditos</h3>
+    <p>La web usa tres librerías de código abierto con licencia MIT, incluidas dentro del propio sitio y no
+      cargadas desde servidores ajenos: <strong>qr-code-styling</strong> para dibujar el código,
+      <strong>three.js</strong> para la vista 3D y <strong>JSZip</strong> para empaquetar los archivos. Sus avisos
+      de copyright se conservan íntegros en los archivos.</p>
+    <p>«QR Code» es una marca registrada de DENSO WAVE INCORPORATED. Este sitio no está asociado con DENSO WAVE ni
+      con ningún fabricante de impresoras 3D.</p>
+
+    <p style="margin-top:2rem"><a class="btn btn--primary" href="index.html">Ir a la herramienta</a></p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom" style="margin-top:0;border:0">
+      <span>&copy; 2026 QR3D &middot; Julián Antonio Gaviria Jiménez</span>
+      <span><a href="index.html">Herramienta</a> &nbsp;·&nbsp; <a href="contacto.html">Contacto</a> &nbsp;·&nbsp; <a href="privacidad.html">Privacidad</a> &nbsp;·&nbsp; <a href="aviso-legal.html">Aviso legal</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

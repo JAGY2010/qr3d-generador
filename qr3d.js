@@ -498,7 +498,8 @@
     var w = el.clientWidth || 400;
     var h = el.clientHeight || 340;
 
-    viewer.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    /* preserveDrawingBuffer permite exportar la vista como imagen (captureImage) */
+    viewer.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
     viewer.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     viewer.renderer.setSize(w, h, false);
     viewer.renderer.domElement.style.width = "100%";
@@ -609,6 +610,39 @@
     viewer.controls.update();
   }
 
+  /* Coloca la camara en una posicion esferica alrededor del objeto, manteniendo
+     la distancia actual. azim y elev en grados. */
+  function orbit(azim, elev) {
+    if (!viewer.ready) return;
+    var t = viewer.controls.target;
+    var d = viewer.camera.position.distanceTo(t);
+    var a = azim * Math.PI / 180, e = elev * Math.PI / 180;
+    viewer.camera.position.set(
+      t.x + d * Math.cos(e) * Math.sin(a),
+      t.y + d * Math.sin(e),
+      t.z + d * Math.cos(e) * Math.cos(a)
+    );
+    viewer.camera.lookAt(t);
+    viewer.controls.update();
+  }
+
+  /* Exporta la vista actual como PNG con fondo transparente. Se usa desde
+     scripts/capturar_vistas.py para generar las imagenes del sitio: son
+     imagenes propias, hechas con el mismo motor que ve el visitante. */
+  function captureImage(w, h) {
+    if (!viewer.ready || !viewer.renderer) return null;
+    var oldPR = viewer.renderer.getPixelRatio();
+    viewer.renderer.setPixelRatio(1);
+    viewer.renderer.setSize(w, h, false);
+    viewer.camera.aspect = w / h;
+    viewer.camera.updateProjectionMatrix();
+    viewer.renderer.render(viewer.scene, viewer.camera);
+    var url = viewer.renderer.domElement.toDataURL("image/png");
+    viewer.renderer.setPixelRatio(oldPR);
+    resize();
+    return url;
+  }
+
   function setColors(colors) {
     if (viewer.meshBase) viewer.meshBase.material.color.set(colors.base);
     if (viewer.meshRelief) viewer.meshRelief.material.color.set(colors.relief);
@@ -644,6 +678,8 @@
     setModel: setModel,
     setColors: setColors,
     resize: resize,
+    orbit: orbit,
+    captureImage: captureImage,
     setVisible: function (v) { viewer.visible = !!v; if (v) resize(); },
     isReady: function () { return viewer.ready; },
     hasFailed: function () { return viewer.failed; }

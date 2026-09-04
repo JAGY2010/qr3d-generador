@@ -26,7 +26,7 @@ except Exception:
     pass
 
 SITE = "https://lexasylum.com"
-VER = "20260819"
+VER = "20260904"
 ROOT = os.getcwd()
 
 
@@ -615,6 +615,45 @@ def more_tools(current):
         '  </section>')
 
 
+# imagen propia de cada pagina: (archivo, ancho, alto, alt, pie)
+IMAGENES = {
+    "qr-wifi.html": ("pieza-placa-wifi", 575, 709,
+        "Placa de pared lila con el codigo de la wifi en morado, dos agujeros para colgar y el texto WIFI",
+        "Placa de 95 mm con el c\u00f3digo de una red wifi. Los dos agujeros para colgarla vienen ya en el archivo."),
+    "qr-resenas-google.html": ("pieza-soporte-resenas", 840, 883,
+        "Soporte de mesa azul marino con una estrella en relieve en el centro del codigo",
+        "Soporte de 82 mm con la estrella en relieve y el texto en la parte de abajo, tal y como sale del archivo."),
+    "qr-llavero.html": ("pieza-llavero-amarillo", 838, 946,
+        "Llavero amarillo con el codigo QR en negro en relieve y el agujero para la anilla",
+        "Llavero de 60 mm en negro sobre amarillo: el m\u00e1ximo contraste posible para una pieza peque\u00f1a."),
+    "qr-carta-restaurante.html": ("pieza-soporte-carta", 853, 924,
+        "Soporte de mesa con el codigo en relieve oscuro sobre base crema y el texto NUESTRA CARTA",
+        "Soporte de 82 mm inclinado a 60 grados. La cara del c\u00f3digo mira hacia arriba y se imprime sin soportes."),
+    "qr-whatsapp.html": ("pieza-soporte-whatsapp", 800, 897,
+        "Soporte de mesa verde oscuro con un bocadillo de chat en el centro y el texto ESCRIBENOS",
+        "Soporte de 78 mm para el mostrador, con el emoji de conversaci\u00f3n convertido en silueta en relieve."),
+    "qr-instagram.html": ("pieza-soporte-instagram", 756, 832,
+        "Soporte de mesa granate sobre base rosa palido con una camara en relieve y el texto SIGUENOS",
+        "Soporte de 78 mm en estilo elegante: los cuadritos se unen en trazos redondeados."),
+    "qr-tiktok.html": ("pieza-placa-social", 561, 721,
+        "Placa de pared color arena con el codigo en rojo teja y el texto SIGUENOS en relieve",
+        "Placa de 95 mm para colgar en la pared o el escaparate, con sus dos agujeros arriba."),
+}
+
+
+def figura(slug):
+    """Vista 3D propia de la pieza. No es una fotografia y el pie lo deja claro."""
+    d = IMAGENES.get(slug)
+    if not d:
+        return ""
+    f, w, h, alt, pie = d
+    return ('      <figure class="figure-inline">\n'
+            '        <img src="assets/img/%s.webp?v=20260904" width="%d" height="%d"\n'
+            '             alt="%s" loading="lazy" decoding="async">\n'
+            '        <figcaption>%s Es una vista del modelo 3D que genera esta web, no una fotograf&iacute;a.</figcaption>\n'
+            '      </figure>' % (f, w, h, alt, pie))
+
+
 def footer_tools():
     """Lista de herramientas del pie: se genera con TODAS las paginas, para que
     anadir una nueva no deje el pie desactualizado."""
@@ -753,6 +792,7 @@ def build():
         <span class="eyebrow">Gu&iacute;a</span>
         <h2>{prose_title}</h2>
       </div>
+{figura}
 {prose}
 
 {adincontent}
@@ -788,6 +828,7 @@ def build():
            header=header, eyebrow=page["eyebrow"], h1=page["h1"], lead=page["lead"],
            badges=parts["BADGES"], tool=tool, adleader=parts["ADLEADER"],
            prose_title=page["prose_title"], prose=prose_html(page["prose"]),
+           figura=figura(page["slug"]),
            adincontent=parts["ADINCONTENT"],
            faq=faq_html(page["faq"]), more=more_tools(page["slug"]),
            footer=footer, overlays=parts["OVERLAYS"], scripts=parts["SCRIPTS"])
@@ -801,12 +842,20 @@ def build():
     print("  [OK] index.html (bloque de mas herramientas)")
 
     # sitemap con todas las paginas
-    urls = ["/"] + ["/" + p["slug"] for p in PAGES] + ["/privacidad.html", "/aviso-legal.html"]
+    urls = (["/"] + ["/" + p["slug"] for p in PAGES]
+            + ["/acerca.html", "/contacto.html", "/privacidad.html", "/aviso-legal.html"])
     rows = []
     for u in urls:
-        prio = "1.0" if u == "/" else ("0.2" if "legal" in u or "privacidad" in u else "0.8")
+        if u == "/":
+            prio = "1.0"
+        elif "legal" in u or "privacidad" in u:
+            prio = "0.2"
+        elif u in ("/acerca.html", "/contacto.html"):
+            prio = "0.4"
+        else:
+            prio = "0.8"
         freq = "weekly" if prio != "0.2" else "yearly"
-        rows.append("  <url>\n    <loc>%s%s</loc>\n    <lastmod>2026-08-19</lastmod>\n"
+        rows.append("  <url>\n    <loc>%s%s</loc>\n    <lastmod>2026-09-04</lastmod>\n"
                     "    <changefreq>%s</changefreq>\n    <priority>%s</priority>\n  </url>"
                     % (SITE, u, freq, prio))
     write("sitemap.xml",
