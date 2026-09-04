@@ -57,9 +57,8 @@ def replace_block(src, name, content):
 PAGES = [
     {
         "slug": "qr-wifi.html",
-        "title": "QR de wifi para imprimir en 3D | QR3D",
-        "desc": "Crea el codigo QR de tu wifi y descargalo en 3MF a dos colores para "
-                "imprimirlo en 3D. Tus huespedes se conectan sin teclear la contrasena.",
+        "title": "Generador de QR para wifi gratis | Imagen y placa 3D",
+        "desc": "Crea el código QR de tu wifi y tus invitados se conectan sin teclear la contraseña. Descárgalo en PNG o SVG, o como placa para imprimir en 3D.",
         "eyebrow": "Wifi &middot; sin dictar contrase&ntilde;as",
         "h1": 'Generador de <em>QR de wifi</em> para imprimir en 3D',
         "lead": "Escribe el nombre de tu red y la contrase&ntilde;a, y ll&eacute;vate una placa lista "
@@ -122,9 +121,8 @@ PAGES = [
     },
     {
         "slug": "qr-resenas-google.html",
-        "title": "QR para reseñas de Google en 3D | QR3D",
-        "desc": "Genera el codigo QR que lleva directo a dejar una resena en tu ficha de Google "
-                "y descargalo listo para imprimir en 3D, en un soporte de mesa a dos colores.",
+        "title": "QR para reseñas de Google gratis | Imagen y soporte 3D",
+        "desc": "Crea el código QR que lleva directo a dejar una reseña en tu ficha de Google. Descárgalo en PNG o SVG, o como soporte de mesa para imprimir en 3D.",
         "eyebrow": "Reseñas &middot; soporte de mesa",
         "h1": 'Generador de <em>QR para reseñas de Google</em>',
         "lead": "Pega el enlace de reseñas de tu ficha de empresa y llévate un soporte de mesa "
@@ -186,9 +184,8 @@ PAGES = [
     },
     {
         "slug": "qr-llavero.html",
-        "title": "Llavero con código QR para imprimir en 3D | QR3D",
-        "desc": "Disena un llavero con tu codigo QR y descargalo en 3MF a dos colores, con el agujero "
-                "para la anilla ya hecho. Ideal para eventos, bodas, ferias y mascotas.",
+        "title": "Llaveros con QR para imprimir en 3D gratis | QR3D",
+        "desc": "Diseña tu llavero con código QR y descárgalo listo para imprimir en 3D, con el agujero para la anilla y los dos colores dentro del archivo. Gratis.",
         "eyebrow": "Llavero &middot; con agujero para la anilla",
         "h1": 'Llavero con <em>código QR</em> para imprimir en 3D',
         "lead": "Pon tu enlace, escribe un texto corto y llévate el llavero listo para imprimir, "
@@ -252,9 +249,8 @@ PAGES = [
     },
     {
         "slug": "qr-carta-restaurante.html",
-        "title": "QR para la carta de restaurante en 3D | QR3D",
-        "desc": "Crea el codigo QR de tu carta digital y descargalo listo para imprimir en 3D: "
-                "un soporte de mesa a dos colores que aguanta el servicio. Gratis y sin registro.",
+        "title": "QR para la carta de tu restaurante gratis | Imagen y 3D",
+        "desc": "Crea el código QR de tu carta digital y descárgalo en PNG o como soporte de mesa para imprimir en 3D. Cambia la carta sin reimprimir los soportes.",
         "eyebrow": "Carta digital &middot; soporte de mesa",
         "h1": 'Generador de <em>QR para la carta</em> de tu restaurante',
         "lead": "Pega el enlace de tu carta y llévate un soporte de mesa listo para imprimir. "
@@ -330,9 +326,8 @@ PAGES = [
     },
     {
         "slug": "qr-whatsapp.html",
-        "title": "QR para WhatsApp en 3D | QR3D",
-        "desc": "Genera el codigo QR que abre un chat de WhatsApp contigo, sin que nadie tenga que "
-                "guardar tu numero, y descargalo listo para imprimir en 3D a dos colores.",
+        "title": "Generador de QR para WhatsApp gratis | Imagen y 3D",
+        "desc": "Crea el código QR que abre un chat de WhatsApp contigo sin que nadie guarde tu número. Descárgalo en PNG, SVG o como soporte para imprimir en 3D.",
         "eyebrow": "WhatsApp &middot; chat directo",
         "h1": 'Generador de <em>QR para WhatsApp</em> para imprimir en 3D',
         "lead": "Pon tu número y llévate un soporte listo para imprimir. Quien lo escanee abre el "
@@ -398,9 +393,8 @@ PAGES = [
     },
     {
         "slug": "qr-instagram.html",
-        "title": "QR para Instagram en 3D | QR3D",
-        "desc": "Crea el codigo QR de tu perfil de Instagram y descargalo listo para imprimir en 3D, "
-                "en un soporte de mostrador a dos colores. Gratis y sin registro.",
+        "title": "QR para Instagram gratis | Imagen y soporte para imprimir",
+        "desc": "Crea el código QR de tu perfil de Instagram y descárgalo en PNG o SVG, o como soporte de mostrador para imprimir en 3D. Sin registro ni marcas de agua.",
         "eyebrow": "Instagram &middot; para el mostrador",
         "h1": 'Generador de <em>QR para Instagram</em> para imprimir en 3D',
         "lead": "Pega la dirección de tu perfil y llévate un soporte listo para imprimir. "
@@ -459,9 +453,8 @@ PAGES = [
     },
     {
         "slug": "qr-tiktok.html",
-        "title": "QR para TikTok en 3D | QR3D",
-        "desc": "Genera el codigo QR de tu perfil de TikTok y descargalo listo para imprimir en 3D, "
-                "en una placa a dos colores para colgar en tu local o tu puesto.",
+        "title": "QR para TikTok gratis | Imagen y placa para imprimir",
+        "desc": "Crea el código QR de tu perfil de TikTok y descárgalo en PNG o SVG, o como placa para colgar impresa en 3D. Gratis y sin marcas de agua.",
         "eyebrow": "TikTok &middot; placa para colgar",
         "h1": 'Generador de <em>QR para TikTok</em> para imprimir en 3D',
         "lead": "Pega la dirección de tu perfil y llévate una placa lista para imprimir y colgar. "
