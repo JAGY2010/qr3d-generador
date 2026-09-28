@@ -92,11 +92,18 @@ licencias MIT originales dentro de `lib/vendor/`.
 
 El servicio de Railway esta conectado a este repositorio: **cada push a `main`
 se publica solo**, sin tocar nada mas. La direccion antigua
-`qr3d-production.up.railway.app` devuelve un 301 al dominio oficial.
+`qr3d-production.up.railway.app` y `www.lexasylum.com` devuelven un 301 al
+dominio oficial (ver `CANONICAL_HOST` en `server.js`).
 
-Paginas publicadas: la portada (generador completo) y tres paginas satelite
+Paginas publicadas: la portada (generador completo), siete paginas satelite
 generadas con `scripts/build_pages.py` (`qr-wifi.html`,
-`qr-resenas-google.html`, `qr-llavero.html`).
+`qr-resenas-google.html`, `qr-llavero.html`, `qr-carta-restaurante.html`,
+`qr-whatsapp.html`, `qr-instagram.html`, `qr-tiktok.html`), `acerca.html`,
+`contacto.html` y las dos legales.
+
+Las vistas 3D de `assets/img/pieza-*.webp` y los archivos de
+`assets/descargas/` se generan con la propia herramienta mediante
+`scripts/capturar_vistas.py`.
 
 ### Si algun dia cambia el dominio
 
