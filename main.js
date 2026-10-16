@@ -281,6 +281,11 @@
       "<span>" + depth + "</span>" +
       "<span>Cada cuadrito <b>" + fmt(mod, 2) + " mm</b></span>" +
       "<span>Relieve <b>" + fmt(state.relief, 1) + " mm</b></span>" +
+      /* en las piezas planas el relieve empieza justo donde acaba la base:
+         ahi va el cambio de filamento en una impresora de un solo color */
+      (state.format !== "soporte"
+        ? "<span>Cambio de color a partir de <b>" + fmt(cfg.thickness || 3, 1) + " mm</b></span>"
+        : "") +
       (tri ? "<span><b>" + tri.toLocaleString("es-ES") + "</b> triangulos</span>" : "");
 
     var out = [];
@@ -306,6 +311,10 @@
 
     if (state.center) {
       out.push(note("warn", "Con logo o emoji en el centro se tapan modulos. Ya subimos la correccion de errores al maximo, pero prueba a escanear una unidad antes de imprimir muchas."));
+    }
+
+    if (state.format === "soporte") {
+      out.push(note("warn", "<b>El soporte necesita impresora multicolor</b> (AMS, MMU o similar) para salir a dos colores: el codigo va en una cara inclinada y un cambio de filamento por altura no puede separarlo de la base. Con una impresora de un solo color, elige llavero o placa, o imprimelo de un color y pinta el relieve."));
     }
 
     checks.innerHTML = out.join("");

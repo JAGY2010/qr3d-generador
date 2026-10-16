@@ -70,6 +70,13 @@ const server = http.createServer((req, res) => {
   }
 
   fs.stat(file, (err, st) => {
+    /* una carpeta sin barra final (/guias) -> /guias/ */
+    if (!err && st.isDirectory()) {
+      const q = req.url.indexOf("?");
+      const rest = q >= 0 ? req.url.slice(q) : "";
+      res.writeHead(301, { Location: urlPath + "/" + rest, "Cache-Control": "public, max-age=3600" });
+      return res.end();
+    }
     if (err || !st.isFile()) {
       /* 404 con la propia pagina, para no perder al visitante */
       return fs.readFile(path.join(ROOT, "index.html"), (e2, html) => {

@@ -469,6 +469,15 @@
     var zip = new window.JSZip();
     zip.file(slug + "-1-base.stl", stlBinary(model.base, "base"));
     zip.file(slug + "-2-codigo.stl", stlBinary(model.relief, "codigo"));
+    var cfg = ((window.__BRAND__ || {}).formats || {})[model.format] || {};
+    var unColor = model.format === "soporte"
+      ? "Este formato (soporte de mesa) NO se puede hacer a dos colores con un\r\n" +
+        "simple cambio de filamento: el codigo va en una cara inclinada. Necesitas\r\n" +
+        "un sistema multicolor (AMS, MMU o similar), o imprimirlo de un color y\r\n" +
+        "pintar el relieve.\r\n\r\n"
+      : "Si tu impresora es de un solo color, programa un cambio de filamento en\r\n" +
+        "la primera capa por encima de " + String(cfg.thickness || 3).replace(".", ",") +
+        " mm, que es donde empieza el relieve.\r\n\r\n";
     zip.file("LEEME.txt",
       "QR3D - dos piezas en STL\r\n" +
       "========================\r\n\r\n" +
@@ -477,8 +486,7 @@
       "3. Asigna un filamento a cada pieza:\r\n" +
       "     -1-base.stl    -> color claro (la base)\r\n" +
       "     -2-codigo.stl  -> color oscuro (el codigo y el texto en relieve)\r\n\r\n" +
-      "Si tu impresora es de un solo color, programa un cambio de filamento\r\n" +
-      "a la altura en la que empieza el relieve.\r\n\r\n" +
+      unColor +
       "El STL no guarda colores. Si tu programa admite 3MF, usa mejor el 3MF.\r\n");
     return zip.generateAsync({ type: "blob", compression: "DEFLATE" });
   }

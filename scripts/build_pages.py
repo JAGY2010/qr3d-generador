@@ -14,6 +14,7 @@ lo que se publica son los .html ya generados.
 
     python scripts/build_pages.py        # desde la raiz del proyecto
 """
+import glob
 import io
 import json
 import os
@@ -26,7 +27,7 @@ except Exception:
     pass
 
 SITE = "https://lexasylum.com"
-VER = "20260904"
+VER = "20261016"
 ROOT = os.getcwd()
 
 
@@ -641,7 +642,7 @@ def figura(slug):
         return ""
     f, w, h, alt, pie = d
     return ('      <figure class="figure-inline">\n'
-            '        <img src="assets/img/%s.webp?v=20260904" width="%d" height="%d"\n'
+            '        <img src="assets/img/%s.webp?v=20261016" width="%d" height="%d"\n'
             '             alt="%s" loading="lazy" decoding="async">\n'
             '        <figcaption>%s Es una vista del modelo 3D que genera esta web, no una fotograf&iacute;a.</figcaption>\n'
             '      </figure>' % (f, w, h, alt, pie))
@@ -721,7 +722,7 @@ def build():
     # Las paginas satelite tienen #herramienta, #guia, #faq y #mas-herramientas
     # propios; solo las secciones que viven unicamente en la portada se redirigen.
     header = parts["HEADER"]
-    for anchor in ("#como-funciona", "#ideas"):
+    for anchor in ("#como-funciona", "#ideas", "#galeria"):
         header = header.replace('href="%s"' % anchor, 'href="index.html%s"' % anchor)
 
     footer = replace_block(parts["FOOTER"], "FOOTERTOOLS", footer_tools())
@@ -835,7 +836,9 @@ def build():
     print("  [OK] index.html (bloque de mas herramientas)")
 
     # sitemap con todas las paginas
+    guias = sorted(f.replace("\\", "/") for f in glob.glob("guias/*.html") if not f.endswith("index.html"))
     urls = (["/"] + ["/" + p["slug"] for p in PAGES]
+            + (["/guias/"] + ["/" + g for g in guias] if guias else [])
             + ["/acerca.html", "/contacto.html", "/privacidad.html", "/aviso-legal.html"])
     rows = []
     for u in urls:
@@ -845,10 +848,12 @@ def build():
             prio = "0.2"
         elif u in ("/acerca.html", "/contacto.html"):
             prio = "0.4"
+        elif u.startswith("/guias/"):
+            prio = "0.7"
         else:
             prio = "0.8"
         freq = "weekly" if prio != "0.2" else "yearly"
-        rows.append("  <url>\n    <loc>%s%s</loc>\n    <lastmod>2026-09-04</lastmod>\n"
+        rows.append("  <url>\n    <loc>%s%s</loc>\n    <lastmod>2026-10-16</lastmod>\n"
                     "    <changefreq>%s</changefreq>\n    <priority>%s</priority>\n  </url>"
                     % (SITE, u, freq, prio))
     write("sitemap.xml",

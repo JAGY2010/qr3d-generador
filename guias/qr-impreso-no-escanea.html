@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QR impreso en 3D que no escanea: causas y soluciones | QR3D</title>
+<meta name="description" content="Las 8 causas por las que un QR impreso en 3D no se lee, de la más común a la más rara, y cómo solucionar cada una antes de gastar más filamento.">
+<link rel="canonical" href="https://lexasylum.com/guias/qr-impreso-no-escanea.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#151b2b">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="QR3D">
+<meta property="og:title" content="QR impreso en 3D que no escanea: causas y soluciones | QR3D">
+<meta property="og:description" content="Las 8 causas por las que un QR impreso en 3D no se lee, de la más común a la más rara, y cómo solucionar cada una antes de gastar más filamento.">
+<meta property="og:url" content="https://lexasylum.com/guias/qr-impreso-no-escanea.html">
+<meta property="og:image" content="https://lexasylum.com/assets/img/pieza-soporte-carta.webp">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap">
+<link rel="stylesheet" href="/styles.css?v=20261016">
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1968948020574146"
+     crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Por qué tu código QR impreso en 3D no se escanea (y cómo arreglarlo)",
+  "description": "Las 8 causas por las que un QR impreso en 3D no se lee, de la más común a la más rara, y cómo solucionar cada una antes de gastar más filamento.",
+  "image": "https://lexasylum.com/assets/img/pieza-soporte-carta.webp",
+  "datePublished": "2026-10-16",
+  "dateModified": "2026-10-16",
+  "inLanguage": "es",
+  "mainEntityOfPage": "https://lexasylum.com/guias/qr-impreso-no-escanea.html",
+  "author": {
+    "@type": "Person",
+    "name": "Julián Antonio Gaviria Jiménez",
+    "url": "https://lexasylum.com/acerca.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "QR3D",
+    "url": "https://lexasylum.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lexasylum.com/assets/favicon.svg"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://lexasylum.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Guías",
+      "item": "https://lexasylum.com/guias/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Por qué tu código QR impreso en 3D no se escanea (y cómo arreglarlo)",
+      "item": "https://lexasylum.com/guias/qr-impreso-no-escanea.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">
+      <span class="logo-mark" aria-hidden="true">QR</span>
+      <span>QR3D</span>
+    </a>
+    <nav class="nav-links" aria-label="Secciones">
+      <a href="/#como-funciona">Cómo funciona</a>
+      <a href="/#ideas">Ideas de uso</a>
+      <a href="/#galeria">Galer&iacute;a</a>
+      <a href="/guias/">Guías</a>
+      <a href="/#mas-herramientas">Más herramientas</a>
+      <a href="/#faq">Preguntas frecuentes</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="section">
+  <article class="wrap wrap--narrow prose">
+    <nav class="breadcrumb" aria-label="Ruta"><a href="/">Inicio</a> &rsaquo; <a href="/guias/">Guías</a></nav>
+    <span class="eyebrow">Guía</span>
+    <h1 style="margin:.7rem 0 .4rem">Por qué tu código QR impreso en 3D no se escanea (y cómo arreglarlo)</h1>
+    <p class="article-meta">Por <a href="/acerca.html">Julián Antonio Gaviria Jiménez</a> &middot; 16 de octubre de 2026 &middot; 7 min de lectura</p>
+    <p class="lead" style="margin-bottom:1.6rem">Lo has impreso, ha quedado precioso, lo acercas al teléfono... y nada. Es de lo más frustrante que te puede pasar con una impresora 3D, pero casi siempre es por una de estas ocho causas. Están ordenadas de la más habitual a la más rara: revísalas una por una y lo normal es que lo encuentres en las tres primeras.</p>
+
+    <figure class="figure-inline">
+      <img src="/assets/img/pieza-soporte-carta.webp?v=20261016" width="853" height="924" alt="Soporte de mesa con un código QR oscuro en relieve sobre una base color crema" loading="eager" decoding="async">
+      <figcaption>Código oscuro sobre base clara: la combinación que mejor lee cualquier cámara. Vista del modelo 3D generado por la herramienta.</figcaption>
+    </figure>
+
+<h2>Antes de nada: prueba el código en la pantalla</h2>
+<p>Abre el diseño en la pantalla del computador y escanéalo con el teléfono. Si en la pantalla
+tampoco funciona, el problema no está en la impresión sino en el propio código: revisa el enlace, el
+tamaño del logo o los colores antes de volver a imprimir. Si en la pantalla funciona y en la pieza no,
+sigue leyendo: el problema está en el paso de la pantalla al plástico.</p>
+
+<h2>1. Los dos colores no tienen suficiente contraste</h2>
+<p>Es la causa número uno, y la menos intuitiva. La cámara del teléfono no ve el relieve: le da igual
+que el código sobresalga un milímetro. Lo único que distingue son <strong>zonas claras y zonas
+oscuras</strong>. Si la base y el código tienen un brillo parecido, para la cámara es una superficie
+lisa, por mucho relieve que tenga.</p>
+<p>El caso típico son dos colores que a la vista se distinguen perfectamente pero tienen una
+luminosidad parecida: un rojo y un verde, un azul medio y un gris, un naranja y un rosa. Tú los ves
+distintos porque tus ojos captan el color; la cámara, al buscar un código QR, se fija sobre todo en lo
+claro y lo oscuro.</p>
+<p><strong>El truco para comprobarlo:</strong> hazle una foto a la pieza, o a la pantalla con el
+diseño, y pásala a blanco y negro con el editor de fotos del teléfono. Si en blanco y negro el código
+se distingue mal, la cámara tampoco lo va a leer.</p>
+<p><strong>La solución:</strong> código oscuro sobre base clara. Negro sobre blanco o crema es lo más
+seguro; azul marino, verde oscuro o granate sobre un color claro también funcionan bien. La
+herramienta calcula el contraste mientras diseñas y te avisa si baja de lo razonable.</p>
+
+<h2>2. Los cuadritos son demasiado pequeños</h2>
+<p>Un código QR está hecho de módulos, los cuadraditos que lo forman. Con una boquilla normal de
+0,4 mm, si cada módulo mide menos de <strong>1,5 mm</strong> la impresora no consigue dibujar bien las
+esquinas: las redondea, los bordes de cuadritos vecinos se tocan y el código se convierte en una
+mancha.</p>
+<p>El tamaño de cada módulo depende de dos cosas: lo grande que sea la pieza y lo largo que sea el
+enlace. Cuantos más caracteres tiene el enlace, más módulos necesita el código, y si la pieza no
+crece, cada uno sale más pequeño.</p>
+<p><strong>La solución</strong>, por orden de preferencia:</p>
+<ul>
+<li><strong>Acorta el enlace.</strong> En los enlaces de redes sociales, todo lo que va detrás de un
+<code>?</code> suele sobrar. Si sigue siendo largo, usa un acortador de enlaces.</li>
+<li><strong>Agranda la pieza</strong> hasta que la herramienta deje de avisarte.</li>
+<li>Si no puedes hacer ninguna de las dos, imprime con una <strong>boquilla de 0,25 mm</strong> y capas
+finas: dibuja detalles mucho más pequeños, a costa de tardar bastante más.</li>
+</ul>
+
+<h2>3. Le falta margen alrededor</h2>
+<p>Todo código QR necesita un borde liso alrededor, sin nada dibujado: lo que se llama la <strong>zona
+tranquila</strong>. La norma pide un margen de cuatro módulos por cada lado. Sin ese margen, la cámara
+no sabe dónde empieza y dónde acaba el código.</p>
+<p>Las piezas que genera esta herramienta ya traen ese margen incluido en la base. Donde suele
+romperse es después: al recortar los bordes de la pieza, al pegarla sobre un fondo con dibujos o al
+colocarla pegada a otro cartel. Deja siempre un borde liso del color de la base alrededor del
+código.</p>
+
+<h2>4. Los colores están al revés</h2>
+<p>El estándar QR está pensado para código oscuro sobre fondo claro. Un código claro sobre fondo oscuro
+—por ejemplo blanco sobre negro, que queda muy elegante— lo leen bien la mayoría de teléfonos
+modernos, pero <strong>no todos</strong>: algunos lectores antiguos y ciertas aplicaciones simplemente
+no lo reconocen.</p>
+<p>Si el código va a estar en un sitio público, donde lo va a escanear gente con todo tipo de
+teléfonos, usa el orden clásico. Si te gusta el aspecto invertido, prueba la pieza con varios
+teléfonos distintos antes de imprimir una tanda.</p>
+
+      <!-- HUECO DE ANUNCIO: bloque en mitad del contenido -->
+      <div class="ad-slot ad-slot--incontent">
+        <span class="ad-tag" aria-hidden="true">ANUNCIO</span>
+        <span class="ad-size" aria-hidden="true">Rectángulo 336 x 280</span>
+        <!-- TU ANUNCIO AQUI. En AdSense: Anuncios > Por bloque de anuncios > crear bloque,
+             copia su data-ad-slot, borra los dos <span> de arriba y quita estos comentarios:
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1968948020574146"
+             data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+      </div>
+
+<h2>5. El plástico brilla demasiado</h2>
+<p>Los filamentos brillantes —sobre todo los llamados «seda» o «silk», y algunos PETG— reflejan la
+luz. Con una lámpara encima o con sol, aparecen manchas blancas sobre el código que tapan módulos
+enteros, y la cámara no puede leerlo.</p>
+<p><strong>La solución:</strong> usa <strong>PLA mate</strong> al menos para la base, que es la parte
+que más superficie ocupa. Si la pieza ya está impresa, prueba a escanearla inclinando un poco el
+teléfono para que el reflejo no caiga encima del código.</p>
+
+<h2>6. El cambio de filamento dejó el color sucio</h2>
+<p>Si imprimes a dos colores con una impresora de un solo color, cambiando el filamento a mitad de la
+pieza, la boquilla todavía tiene dentro restos del primer color cuando empieza el segundo. Las primeras
+capas del relieve salen entonces de un tono intermedio, mezclado, y el contraste baja justo donde más
+importa.</p>
+<p><strong>La solución:</strong> después de cambiar el filamento, empuja plástico nuevo por la
+boquilla hasta que salga del color limpio, sin vetas del anterior, y solo entonces reanuda. Si tienes un
+sistema multicolor y ves mezcla en la pieza, aumenta el volumen de purga en el programa de impresión.
+Lo explicamos paso a paso en la guía sobre
+<a href="/guias/imprimir-qr-dos-colores-un-solo-color.html">cómo imprimir a dos colores con una
+impresora de un solo color</a>.</p>
+
+<h2>7. El logo del centro es demasiado grande</h2>
+<p>Un código QR puede perder una parte y seguir funcionando gracias a lo que se llama
+<strong>corrección de errores</strong>. En su nivel más alto puede recuperar hasta cerca de un 30 % de
+información dañada, y por eso caben logos y emojis en el centro. Cuando pones algo ahí, la herramienta
+sube automáticamente al nivel máximo.</p>
+<p>Pero ese margen no es infinito, y en la pieza impresa se suma a todo lo demás: un poco de pérdida
+por el logo, otro poco por los bordes redondeados de la impresión, otro por un reflejo... y el código
+deja de leerse. Además hay tres zonas que nunca se pueden tapar: los tres cuadrados grandes de las
+esquinas, que son los que permiten a la cámara encontrar el código.</p>
+<p><strong>La solución:</strong> si el código falla y lleva logo, prueba primero sin él. Si sin logo
+funciona, el logo era el problema: hazlo más pequeño o quítalo.</p>
+
+<h2>8. El código se lee, pero abre otra cosa</h2>
+<p>A veces el código funciona perfectamente y el problema está en el destino:</p>
+<ul>
+<li>Un error al copiar el enlace: una letra de más, una de menos, o la mitad del enlace sin
+copiar.</li>
+<li>En redes sociales, <strong>cambiaste tu nombre de usuario</strong> después de imprimir, y la
+dirección antigua ya no existe.</li>
+<li>En códigos de wifi, <strong>cambiaste la contraseña</strong> de la red.</li>
+<li>La página a la que apuntas cambió de dirección o ya no existe.</li>
+</ul>
+<p>Por eso, antes de imprimir varias unidades, escanea el diseño en la pantalla y comprueba que
+<strong>llega exactamente a donde quieres</strong>, no solo que «abre algo».</p>
+
+<h2>Lista rápida antes de imprimir</h2>
+<ol>
+<li>El código se escanea desde la pantalla y abre el destino correcto.</li>
+<li>Código oscuro sobre base clara, y se distingue bien en una foto en blanco y negro.</li>
+<li>Cada cuadrito mide al menos 1,5 mm.</li>
+<li>Hay un borde liso alrededor del código.</li>
+<li>La base es de plástico mate.</li>
+<li>Si cambias de filamento a mitad de pieza, purgas hasta que sale el color limpio.</li>
+<li>Si lleva logo, has comprobado que se lee con él puesto.</li>
+<li>Has impreso una unidad de prueba antes de hacer muchas.</li>
+</ol>
+
+    <div class="cta-box">
+      <h3>Deja que la herramienta lo revise por ti</h3>
+      <p>Mientras diseñas, el generador comprueba el contraste entre los dos colores, el tamaño de cada cuadrito y el margen alrededor del código, y te avisa antes de que imprimas.</p>
+      <div class="cta-actions">
+          <a class="btn btn--primary" href="/">Abrir el generador</a>
+      </div>
+    </div>
+
+    <h2>Otras guías</h2>
+    <ul>
+        <li><a href="/guias/imprimir-qr-dos-colores-un-solo-color.html">Cómo imprimir un código QR a dos colores con una impresora de un solo color</a></li>
+        <li><a href="/guias/">Todas las guías</a></li>
+    </ul>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>QR3D</h4>
+        <p>Generador gratuito de códigos QR para imprimir en 3D. Todo se genera en tu navegador: ni registro, ni servidores, ni marcas de agua.</p>
+      </div>
+      <div>
+        <h4>Herramientas</h4>
+<!-- P:FOOTERTOOLS:START -->
+        <ul>
+          <li><a href="/index.html">Generador completo</a></li>
+          <li><a href="/qr-wifi.html">QR de wifi</a></li>
+          <li><a href="/qr-resenas-google.html">QR para reseñas de Google</a></li>
+          <li><a href="/qr-llavero.html">Llavero con QR</a></li>
+          <li><a href="/qr-carta-restaurante.html">QR para la carta</a></li>
+          <li><a href="/qr-whatsapp.html">QR para WhatsApp</a></li>
+          <li><a href="/qr-instagram.html">QR para Instagram</a></li>
+          <li><a href="/qr-tiktok.html">QR para TikTok</a></li>
+        </ul>
+  <!-- P:FOOTERTOOLS:END -->
+      </div>
+      <div>
+        <h4>El proyecto</h4>
+        <ul>
+          <li><a href="/guias/">Guías de impresión</a></li>
+          <li><a href="/acerca.html">Acerca de QR3D</a></li>
+          <li><a href="/contacto.html">Contacto</a></li>
+          <li><a href="/index.html#ejemplos">Archivos de ejemplo</a></li>
+          <li><a href="/privacidad.html">Privacidad</a></li>
+          <li><a href="/aviso-legal.html">Aviso legal</a></li>
+          <li><a href="/privacidad.html#cookies">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 QR3D &middot; Julián Antonio Gaviria Jiménez. QR Code es una marca registrada de DENSO WAVE INCORPORATED.</span>
+      <span>Hecho para makers y para negocios con prisa.</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

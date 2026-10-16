@@ -486,6 +486,51 @@ dialog.ad-modal::backdrop { background: rgba(18,21,28,.55); }
 }
 
 /* =============================================================
+   8c. Guias: articulos, tablas, enlaces en el texto
+   ============================================================= */
+.prose a:not(.btn) { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px; }
+.prose a:not(.btn):hover { color: var(--ink); }
+.prose h2 { margin: 2.4rem 0 .75rem; font-size: clamp(1.28rem, 1.05rem + .8vw, 1.6rem); }
+.prose ol { color: var(--ink-soft); padding-left: 1.3rem; margin-bottom: 1rem; }
+.prose ol li { margin-bottom: .5rem; }
+.prose .note { margin: 0 0 1.2rem; }
+.prose code { font-size: .88em; background: var(--surface-2); padding: .1em .35em; border-radius: 5px; }
+
+.table-wrap { overflow-x: auto; margin: 0 0 1.3rem; }
+.prose table { width: 100%; border-collapse: collapse; font-size: .9rem; min-width: 420px; }
+.prose th, .prose td { text-align: left; padding: .6rem .75rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.prose th { color: var(--ink); font-weight: 600; background: var(--surface-2); }
+.prose td { color: var(--ink-soft); }
+
+.breadcrumb { font-size: .8rem; color: var(--ink-mute); margin-bottom: .9rem; }
+.breadcrumb a { color: var(--ink-soft); }
+.article-meta { font-size: .82rem; color: var(--ink-mute); margin: .2rem 0 1.6rem; }
+
+.cta-box {
+  margin: 2.4rem 0 1rem; padding: 1.5rem;
+  border-radius: var(--r); background: var(--deep); color: #fff;
+}
+.cta-box h3 { color: #fff; margin: 0 0 .45rem; }
+.cta-box p { color: #cfd5e2; margin-bottom: 1.1rem; }
+.cta-box .cta-actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+.prose .cta-box a.btn--ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.35); }
+
+.guide-list { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+.guide-card {
+  display: grid; grid-template-columns: 1fr; gap: 1rem; align-items: center;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 1rem;
+  transition: transform .25s var(--ease-out), box-shadow .25s var(--ease-out), border-color .25s var(--ease-out);
+}
+.guide-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: var(--ink-mute); }
+.guide-card img { width: 100%; height: auto; border-radius: 10px; background: linear-gradient(160deg, #fbfbfd, #eceff5); }
+.guide-card h2 { font-size: 1.15rem; margin: 0 0 .4rem; }
+.guide-card p { font-size: .9rem; color: var(--ink-soft); }
+.guide-card .article-meta { margin: .5rem 0 0; }
+@media (min-width: 720px) {
+  .guide-card { grid-template-columns: 200px 1fr; }
+}
+
+/* =============================================================
    9. Reduced-motion - solo lo intrusivo
    ============================================================= */
 @media (prefers-reduced-motion: reduce) {
